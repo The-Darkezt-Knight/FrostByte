@@ -1,4 +1,4 @@
-#content-area #user-management .header, #content-area #database-administration .header
+#content-area #user-management .header, #content-area #database-administration .header, #content-area #system-monitoring .header
 {
     width: 100%;
     height: 180px;
@@ -9,7 +9,7 @@
     /*box-shadow: 0 1px 2px rgba(155, 155, 155, 0.4);*/
 }
 
-#content-area #user-management .header .cards, #content-area #database-administration .header .cards
+#content-area #user-management .header .cards, #content-area #database-administration .header .cards, #content-area #system-monitoring .header .cards
 {
     background-color: white;
     width: 300px;
@@ -33,7 +33,7 @@
 {
     border-left: 4px solid tomato;
 }
-#content-area #user-management .header .heading, #content-area #database-administration .header .heading
+#content-area #user-management .header .heading, #content-area #database-administration .header .heading, #content-area #system-monitoring .header .heading
 {
     width: 100%;
     height: 70%;
@@ -41,7 +41,7 @@
     color: #4b5563;
 }
 
-#content-area #user-management .header .subheading, #content-area #database-administration .header .subheading
+#content-area #user-management .header .subheading, #content-area #database-administration .header .subheading, #content-area #system-monitoring .header .subheading
 {
     width: 100%;
     height: 30%;
@@ -50,12 +50,12 @@
     align-items:first flex-end;
 }
 
-#content-area #user-management .header .heading p:first-child, #content-area #database-administration .header .heading p:first-child
+#content-area #user-management .header .heading p:first-child, #content-area #database-administration .header .heading p:first-child, #content-area #system-monitoring .header .heading p:first-child
 {
     font-size: 20px;
 }
 
-#content-area #user-management .header .heading p:not(:first-child), #content-area #database-administration .header .heading p:not(:first-child)
+#content-area #user-management .header .heading p:not(:first-child), #content-area #database-administration .header .heading p:not(:first-child), #content-area #system-monitoring .header .heading p:not(:first-child)
 {
     font-size: 40px;
     font-weight: bold;

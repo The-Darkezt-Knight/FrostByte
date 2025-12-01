@@ -35,6 +35,11 @@
     color: #111827;
 }
 
+#user-management input[type="search"]:focus
+{
+    border: 2px solid skyblue;
+}
+
 #user-management #status, #roles
 {
     height: 2.6rem;
