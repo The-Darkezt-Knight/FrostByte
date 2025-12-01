@@ -1,0 +1,137 @@
+#system-config #container
+{
+    height: 100%;
+    line-height: 0.3;
+    box-sizing: border-box;
+}
+
+#system-config #container h2
+{
+    color: #111827;
+}
+
+#system-config #container p
+{
+    color: #4b5563;
+}
+
+#system-config #container #body
+{
+    box-sizing: border-box;
+    height: 90%;
+    display: flex;
+    gap: 20px;
+}
+#system-config #container #nav-list
+{
+    width: 30%;
+    height: max-content;
+    box-sizing: border-box;
+    padding: 10px 20px 10px 20px;
+    background-color: white;
+    box-shadow: 0 3px 4px rgba(155, 155, 155, 0.4);
+}
+
+#container #body #nav-list span
+{
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#container #body #nav-list span:hover
+{
+    background-color: rgba(135, 207, 235, 0.495);
+    border-radius: 10px;
+}
+
+#container #body #nav-list span i
+{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+#container #body #main-content
+{
+    line-height: normal;
+    background-color: white;
+    box-shadow: 0 3px 4px rgba(155, 155, 155, 0.4);
+    display: flex;
+    flex-direction: column;
+    padding: 10px 40px 10px 40px;
+}
+
+#container #body #main-content label
+{
+    font-size: 19px;
+    margin-bottom: 6px;
+    color: #111827;
+}
+
+#container #body #main-content input
+{
+    font-size: 19px;
+    margin-bottom: 20px;
+    color: #111827;
+    height: 2.6rem;
+    border: 1px solid gray;
+    padding: 0 0 0 20px;
+    border-radius: 7px;
+    outline: none;
+}
+
+#container #body #main-content select
+{
+    font-size: 19px;
+    margin-bottom: 20px;
+    color: #111827;
+    height: 2.6rem;
+    border: 1px solid gray;
+    padding: 0 0 0 20px;
+    border-radius: 7px;
+    outline: none;
+    width: 40%;
+    color: #4b5563;
+}
+
+#container #body #main-content #btn-section
+{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+#container #body #main-content #btn-section button
+{
+    width: 30%;
+    height: 3rem;
+    border-radius: 7px;
+    border: none;
+    font-size: 16px;
+    color: #4b5563;
+}
+
+#container #body #main-content #btn-section button:first-child
+{
+    background-color: skyblue;
+    color: white;
+}
+
+#container #body #main-content #btn-section button:first-child:hover
+{
+    background-color: rgb(49, 197, 255);
+}
+
+#container #body #main-content #btn-section button:not(:first-child):hover
+{
+    background-color: rgb(193, 188, 188);
+}
+

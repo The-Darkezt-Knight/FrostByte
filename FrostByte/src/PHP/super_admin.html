@@ -10,14 +10,21 @@
     <link rel="stylesheet" href="/FrostByte/src/css/superadmin/table-section.css">
     <link rel="stylesheet" href="/FrostByte/src/css/superadmin/nav.css">
     <link rel="stylesheet" href="/FrostByte/src/css/superadmin/database-administration-container.css">
+    <link rel="stylesheet" href="/FrostByte/src/css/superadmin/system-config.css">
+    <link rel="stylesheet" href="/FrostByte/src/css/superadmin/system-monitoring.css">
+    <link rel="stylesheet" href="/FrostByte/src/css/superadmin/user-management.css">
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script src="/FrostByte/src/js/super-admin-panel.js" defer></script>
     <script src="/FrostByte/src/js/user_management_table.js"></script>
     <script src="/FrostByte/src/js/database-administration-table.js"></script>
+    <script src="/FrostByte/src/js/system-monitoring.js" defer></script>
+    <script src="/FrostByte/src/js/user_management_add_user.js" defer   ></script>
     <title>Super Admin panel</title>
 </head>
 <body>
@@ -68,7 +75,7 @@
         </footer>
     </aside>
 
-    <main id="content-area">
+    <div id="content-area">
         <div id="user-management">
             <div class="header">
                 <div class="cards" id="card1">
@@ -119,12 +126,12 @@
                     <option value="suspendede">Suspended</option>
                     <option value="onReview">On review</option>
                 </select>
-                <button id="add_user">
+                <button id="add_user" >
                     <i class="fa-solid fa-user-plus" style="color: white;"></i>
                     Add user
                 </button>
             </nav>
-
+            <!--
                 <table class ="table-section" id="user_table">
                     <thead>
                     <tr>
@@ -158,8 +165,46 @@
                         </tr>
                     </tbody>
                 </table>
+            -->
+
+            <div id="add-user" class="insert-user">
+                <form method="POST" action="#" id="sign-up">
+                <div id="header">
+                    <p>Sign up users</p>
+                </div>
+                <div id="user-body">
+                        <label for="fullname">Full name</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Enter full name">
+                        <p></p>
+
+                        <label for="gender">Gender</label>
+                        <input type="text" id="gender" name="gender" placeholder="Enter gender">
+                        <p></p>
+
+                        <label for="email">City</label>
+                        <input type="text" id="city" name="city" placeholder="Enter city">
+                        <p></p>
+
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email" placeholder="Enter email">
+                        <p></p>
+
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Enter password">
+                        <p></p>
+
+                        <label for="password">Confirm password</label>
+                        <input type="password" name="confirm" id="confirm" placeholder="Confirm password">
+                        <p></p>
+                </div>
+                    <div id="submit-area">
+                        <button type="submit">Create account</button>
+                    </div>
+        </form>
+            </div>
 
         </div>
+
         <div id="database-administration">
             <div class="header">
                 <div class="cards" id="card1">
@@ -182,6 +227,7 @@
                     <button>refresh</button>
                 </div>
 
+                <!--
                 <table class="table-section" id="db_table">
                     <thead>
                     <tr>
@@ -213,19 +259,88 @@
                         </tr>
                     </tbody>
                 </table>
-
+            -->
             </div>
             
 
         </div>
+
         <div id="system-monitoring">
-            
-        </div>
+            <div class="header">
+                <div class="cards" id="card1">
+                    <div class="heading">
+                        <p>System Uptime</p>
+                        <p>0</p>
+                    </div>
+                    <div class="subheading">
+                        
+                    </div>
+                </div>
+
+                </div>
+
+                <div id="chart-section">
+                    <div id="chart1">
+                        <p>System uptime</p>
+                        <canvas id="uptime-chart"></canvas>
+                    </div>
+                    </div>
+
+                <div id="report-logs-section">
+                    <!--error report logs here-->
+                </div>
+        </div>    
+
         <div id="system-config">
-            <p>System config</p>
+            <div id="container">
+                <h2>System Configuration</h2>
+                <p>Configure system setttings, integrations, and preferences</p>
+
+                <div id="body">
+                    <div id="nav-list">
+                        <span>
+                            <i class="fa-solid fa-globe" style="color: #2563eb;"></i>
+                            <p>General settings</p>
+                        </span>
+                        <span>
+                            <i class="fa-solid fa-credit-card" style="color: #2563eb"></i>
+                            <p>Payment Gateway</p>
+                        </span>
+                        <span>
+                            <i class="fa-solid fa-truck" style="color: #2563eb"></i>
+                            <p>Shipping Settings</p>
+                        </span>
+                        <span>
+                            <i class="fa-solid fa-shield" style="color: #2563eb"></i>
+                            <p>Security</p>
+                        </span>
+                    </div>
+
+                    <div id="main-content">
+                        <h2>General Settings</h2>
+
+                        <label for="siteName">Site Name</label>
+                        <input type="text" name="siteName" id="siteName" placeholder="Enter site name">
+
+                        <label for="SiteURL">Site URL</label>
+                        <input type="text" name="siteURL" id="siteURL" placeholder="Enter site URL">
+
+                        <label for="language">Default Language</label>
+                        <select name="language" id="language">
+                            <option value="english"> English</option>
+                            <option value="filipino">Filipino</option>
+                        </select>
+
+                        <div id="btn-section">
+                            <button>Save changes</button>
+                            <button>Reset to default</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
-
 </body>
 
 </html>
