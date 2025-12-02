@@ -1,0 +1,10 @@
+#order-management
+{
+    opacity: 100%;
+    border: 2px solid red;
+}
+
+#order-management .table-list
+{
+    border: 2px solid red;
+}
