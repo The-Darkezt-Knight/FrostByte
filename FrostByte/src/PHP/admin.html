@@ -12,16 +12,20 @@
     <link rel="stylesheet" href="/FrostByte/src/css/admin/nav.css">
     <link rel="stylesheet" href="/FrostByte/src/css/admin/product-management-add-product.css">
     <link rel="stylesheet" href="/FrostByte/src/css/admin/order-management.css">
+    <link rel="stylesheet" href="/FrostByte/src/css/admin/product-management.css">
+    <link rel="stylesheet" href="/FrostByte/src/css/admin/schedule-technician/technician-schedule.css">
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <script src="/FrostByte/src/js/admin-panel.js" defer></script>
-    <script src="/FrostByte/src/js/overview_order_list_table.js" defer></script>
-    <script src="/FrostByte/src/js/product-management-product-list-table.js"></script>
-    <script src="/FrostByte/src/js/product-management-add-product.js" defer></script>
+    <script src="/FrostByte/src/js/admin/admin-panel.js" defer></script>
+    <script src="/FrostByte/src/js/admin/overview_order_list_table.js" defer></script>
+    <script src="/FrostByte/src/js/admin/product-management-product-list-table.js" defer></script>
+    <script src="/FrostByte/src/js/admin/product-management-add-product.js" defer></script>
+    <script src="/FrostByte/src/js/admin/order-management-order-table.js"></script>
+    <script src="/FrostByte/src/js/admin/create-task.js" defer></script>
 </head>
 <body>
     <aside>
@@ -115,6 +119,7 @@
                     </div>
 
                     </div>
+                    <!--end of header-->
 
                     <div class="table-list">
                         <table id="order-list">
@@ -140,6 +145,80 @@
                             </tbody>
                         </table>
                     </div>
+                    <!--end of overview table-->
+                </div>  
+                <!--end of overview-->
+
+                <div id="order-management">
+                    <nav>
+                        <i id="search-icon" class="fa-solid fa-magnifying-glass" style="color: #2563eb;"></i>
+                        <input type="search" placeholder="Search for a product...">
+
+                        <select name="status" id="status">
+                            <option value="allStatus">Shipped</option>
+                            <option value="active">Processing</option>
+                            <option value="suspended">Completed</option>
+                        </select>
+                    </nav>
+                    <!--end of nav-->
+
+                    <div class="table-list">
+                        <table id="product-order-list">
+                            <thead>
+                                <tr>
+                                    <th>Product name</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ryzen 9 9600x</td>
+                                    <td>Processor</td>
+                                    <td>28,000</td>
+                                    <td>20</td>
+                                    <td>In stock</td>
+                                    <td><i class="fa-solid fa-ellipsis fa-rotate-90"></i></td>        
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--end of order management table-->
+                </div>    
+
+                <div id="technician-schedule">
+                        <div id="header">
+                            <p>Assign a technician</p>
+                            <button id="add-task-btn">Schedule a task</button>
+                        </div>
+                        <div id="body">
+                            <!--tasks go here-->
+                        </div>
+
+                        <div id="task-modal" class="modal">
+                            <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <h2>Create Task</h2>
+                                    <form id="task-form">
+                                    <label>Task Name</label>
+                                    <input type="text" id="task-name" required>
+
+                                    <label>Customer Name</label>
+                                    <input type="text" id="customer-name" required>
+
+                                    <label>Time</label>
+                                    <input type="time" id="task-time" required>
+
+                                    <label>Location</label>
+                                    <input type="text" id="task-location" required>
+
+                                    <button type="submit">Add Task</button>
+                                </form>
+                            </div>
+                        </div>
                 </div>
 
                 <div id="product-management">
@@ -164,6 +243,7 @@
                             Add product
                         </button>
                     </nav>
+                    <!--end of product management nav-->
 
                     <div class="table-list">
                         <table id="product-list">
@@ -184,11 +264,12 @@
                                     <td>28,000</td>
                                     <td>20</td>
                                     <td>In stock</td>
-                                    <td></td>        
+                                    <td><i class="fa-solid fa-ellipsis fa-rotate-90"></i></td>        
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+                    <!--end of table div-->
 
                     <div id="add-user" class="insert-user">
                         <form method="POST" action="#" id="sign-up">
@@ -209,45 +290,16 @@
                                 <p></p>
 
                             <div id="submit-area">
-                                    <button type="submit">Create account</button>
+                                    <button type="submit">Add product</button>
                             </div>
                         </form>
                     </div>
-                </div>  
-
-                <div id="order-management">
-                    <div class="table-list">
-                        <h2>
-                            Order Management
-                        </h2>
-                        <table id="order-management-list">
-                            <thead>
-                                <tr>
-                                    <th>Order ID</th>
-                                    <th>Customer</th>
-                                    <th>Product</th>
-                                    <th>Amount</th>
-                                    <th>Status</th>
-                                    <th>Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>ORD-001</td>
-                                    <td>John Doe</td>
-                                    <td>Ryzen 9 9600x</td>
-                                    <td>28,000</td>
-                                    <td>Successful</td>    
-                                    <td></td>    
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>    
-
-                <div id="technician-schedule">
-                    <p>Assign a technician</p>
+                    <!--end of add product panel-->
                 </div>
+                <!--end of product management-->
             </div>
+            </div>
+</div>
+                <!--end of technician scheduling-->
 </body>
 </html>
