@@ -1,0 +1,100 @@
+#content-area #product-management nav
+{
+    position: relative;
+    margin: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 20px 10px 20px;
+    background-color: white;
+    box-shadow: 0 3px 4px rgba(155, 155, 155, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #4b5563;
+}
+
+#product-management #search-icon
+{
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    transform: translateY(-50%);
+}
+
+#product-management input[type="search"]
+{
+    width: 33%;
+    border-radius: 7px;
+    height: 2.6rem;
+    border: 1px solid gray;
+    outline: none;
+    padding: 0 0 0 40px;
+    font-size: 16px;
+    border: 1px solid rgba(128, 128, 128, 0.44);
+    color: #111827;
+}
+
+#product-management input[type="search"]:focus
+{
+    border: 2px solid skyblue;
+}
+
+#product-management #status, #type
+{
+    height: 2.6rem;
+    width: 20%;
+    font-size: 16px;
+    padding: 0 5px 0 5px;
+    border: 1px solid rgba(128, 128, 128, 0.44);
+    outline: none;
+    border-radius: 7px;
+    color: #4b5563;
+}
+
+#add-product
+{
+    height: 2.6rem;
+    width: 15%;
+    background-color: skyblue;
+    border: none;
+    border-radius: 7px;
+    color: white;
+}
+
+#add-product:hover
+{
+    background-color: rgb(49, 197, 255);
+}
+
+/*Database administration*/
+#database-administration nav
+{
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    margin: 0 0 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 0 3px 4px rgba(155, 155, 155, 0.1);
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    color: #4b5563;
+    gap: 40px;
+    padding: 0 0 0 50px;
+    box-sizing: border-box;
+    border-bottom: 1px solid gray;
+}
+
+#database-administration nav a
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    height: 60px;
+    font-size: 16px;
+    border-bottom: 2px solid skyblue;
+}
