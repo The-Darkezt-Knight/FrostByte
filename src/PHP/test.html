@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+
+    <link rel="stylesheet" href="/FrostByte/src/css/side_panel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="/FrostByte/src/css/admin/admin.css">
+    <link rel="stylesheet" href="/FrostByte/src/css/admin/cards.css">
+    <link rel="stylesheet" href="/FrostByte/src/css/admin/nav.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="/FrostByte/src/js/admin/admin-panel.js" defer></script>
+    <script src="/FrostByte/src/js/admin/overview_order_list_table.js"></script>
+    <script src="/FrostByte/src/js/admin/product-management-product-list-table.js"></script>
+</head>
+<body>
+    <aside>
+        <header>
+            <i class="fa-solid fa-terminal" style="color: #2563eb;"></i>
+            <div>
+                <p>Console Admin</p>
+                <p>Jose Raphael Pido</p>
+            </div>
+        </header>
+        <main>
+            <div class="container" id="overview-btn">
+                <i class="fa-solid fa-chart-line" style="color: #2563eb"></i>
+                <div>
+                    <p class="header">Overview</p>
+                    <p class="subheader">Dashboards and analytics</p>
+                </div>
+            </div>
+
+            <div class="container" id="product-management-btn">
+                <i class="fa-solid fa-warehouse" style="color: #2563eb"></i>
+                <div>
+                    <p class="header">Product Management</p>
+                    <p class="subheader">Manage inventory and products</p>
+                </div>
+            </div>
+
+            <div class="container" id="order-management-btn">
+                <i class="fa-solid fa-square-binary" style="color: #2563eb;"></i>
+                <div>
+                    <p class="header">Order Management</p>
+                    <p class="subheader">Process and track orders</p>
+                </div>
+            </div>
+
+            <div class="container" id="technician-schedule-btn">
+                <i class="fa-solid fa-screwdriver-wrench" style="color: #2563eb;"></i>
+                <div>
+                    <p class="header">Technician Schedule</p>
+                    <p class="subheader">Schedule repairs and setups</p>
+                </div>
+            </div>
+        </main>
+        <footer>
+                <i class="fa-solid fa-arrow-right-from-bracket" style="color: red;"></i>
+                <a href="/FrostByte/src/PHP/index.html">Sign out</a>
+        </footer>
+    </aside>
+
+    <div id="content-area">
+                <div id="overview">
+                    <div class="header">
+                        <div class="cards" id="card1">
+                            <div class="heading">
+                                <p>Total orders</p>
+                                <p>0</p>
+                            </div>
+                            <div class="subheading">
+                                
+                            </div>
+                        </div>
+
+                        <div class="cards" id="card2">
+                            <div class="heading">
+                                <p>Products</p>
+                                <p>0</p>
+                            </div>
+                            <div class="subheading">
+                                
+                            </div>
+                        </div>
+
+                        <div class="cards" id="card3">
+                            <div class="heading">
+                                <p>Revenue</p>
+                                <p>0</p>
+                            </div>
+                            <div class="subheading">
+                                
+                            </div>
+                        </div>
+
+                        <div class="cards" id="card4">
+                            <div class="heading">
+                                <p>Pending tasks</p>
+                                <p>0</p>
+                            </div>
+                            <div class="subheading">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of header-->
+
+                    <div class="table-list">
+                        <table id="order-list">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Product</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ORD-001</td>
+                                    <td>John Doe</td>
+                                    <td>Ryzen 9 9600x</td>
+                                    <td>28,000</td>
+                                    <td>Successful</td>      
+                                    <td>11/04/04</td>  
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--end of overview table-->
+                </div>
+                <!--end of overview section-->
+
+                <div id="product-management">
+                     <nav>
+                        <i id="search-icon" class="fa-solid fa-magnifying-glass" style="color: #2563eb;"></i>
+                        <input type="search" placeholder="Search for a product...">
+
+                        <select name="type" id="type">
+                            <option value="allRoles">All types</option>
+                            <option value="superadmin">Apparatus</option>
+                            <option value="admin">Keyboards</option>
+                            <option value="technician">Mouse</option>
+                            <option value="user">Monitor</option>
+                        </select>
+                        <select name="status" id="status">
+                            <option value="allStatus">All status</option>
+                            <option value="active">Active</option>
+                            <option value="suspended">Out of stock</option>
+                        </select>
+                        <button id="add-product" >
+                            <i class="fa-solid fa-boxes-stacked" style="color: white"></i>
+                            Add product
+                        </button>
+                    </nav>
+                    <!--end of nav-->
+
+                    <div class="table-list">
+                        <table id="product-list">
+                            <thead>
+                                <tr>
+                                    <th>Product name</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ryzen 9 9600x</td>
+                                    <td>Processor</td>
+                                    <td>28,000</td>
+                                    <td>20</td>
+                                    <td>In stock</td>
+                                    <td></td>        
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--end of table-->
+
+                    
+                </div>  
+
+                <div id="order-management">
+                    <p>order management</p>
+                </div>    
+
+                <div id="technician-schedule">
+                    <p>Assign a technician</p>
+                </div>
+            </div>
+</body>
+</html>

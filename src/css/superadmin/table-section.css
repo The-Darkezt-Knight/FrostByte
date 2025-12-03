@@ -1,0 +1,52 @@
+#content-area .table-section
+{
+    background-color: white;
+    box-shadow: 0 3px 4px rgba(155, 155, 155, 0.1);
+    margin: 20px;
+    color: #4b5563;
+    border-radius: 10px;
+}
+
+.table-section thead th
+{
+    padding: 20px;
+    color: #4b5563;
+}
+
+.table-section thead th:nth-child(5)
+{
+    display: flex;
+    justify-content: center;
+}
+
+.table-section tbody td
+{
+    padding: 10px;
+}
+
+#user_table .table-section tbody td:nth-child(2)
+{
+    color: limegreen;
+}
+
+#user_table .table-section tbody td:nth-child(3)
+{
+    color: rebeccapurple;
+}
+
+#user_table .table-section tbody tr td:nth-child(5)
+{
+    max-width: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#user_table .table-section tbody tr td:nth-child(5):hover i
+{
+   border-radius: 7px;
+   padding: 0 5px 0 5px;
+   background-color: rgba(182, 178, 178, 0.563);
+}
+
+
+

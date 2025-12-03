@@ -1,0 +1,232 @@
+#technician-schedule
+{
+    gap: 30px;
+    position: relative;
+    overflow-y: auto;
+}
+
+#technician-schedule #body .container:hover i
+{
+    background-color: transparent;
+}
+#technician-schedule #header
+{
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 3px 4px rgba(155, 155, 155, 0.2);
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#technician-schedule p
+{
+    color: #111827;
+}
+#technician-schedule #header button
+{
+    height: 2.6rem;
+    width: 15%;
+    background-color: skyblue;
+    border: none;
+    border-radius: 7px;
+    color: white;
+}
+
+#technician-schedule #header button:hover
+{
+    background-color: rgb(49, 197, 255);
+}
+
+#technician-schedule #body
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#technician-schedule #body .container
+{
+    background-color: white;
+    box-shadow: 0 3px 4px rgba(155, 155, 155, 0.2);
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+
+#technician-schedule #body .container .top
+{
+    width: 100%;
+    height: 80px;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#technician-schedule #body .container .top i
+{
+    background-color: rgb(224, 224, 224);
+    width: 15%;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#technician-schedule #body .container .top .information
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 90%
+}
+
+#technician-schedule #body .container .top .information p:first-child
+{
+    color: #111827;
+}
+
+#technician-schedule #body .container .top .information p:not(first-child)
+{
+    color: #4b5563;
+}
+
+#technician-schedule #body .container .top .actions
+{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 20%;
+    gap: 30px
+}
+
+#technician-schedule #body .container .top .actions i
+{
+    background-color: transparent;
+    font-size: 20px;
+    padding: 5px 10px 5px 10px;
+}
+
+#technician-schedule #body .container .top .actions i:hover
+{
+    background-color: rgb(224, 224, 224);
+}
+
+#technician-schedule #body .container .settings
+{
+    display: flex;
+    height: auto;
+    justify-content: flex-start;
+    gap: 100px;
+}
+
+#technician-schedule #body .container .settings span
+{
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+#technician-schedule #body .container .settings span p
+{
+    transform: translateY(2px);
+    color: #4b5563;
+}
+
+#technician-schedule #add-task
+{
+    position: absolute;
+    top: 0;
+    right: -100px;
+    display: none;
+    
+}
+
+#technician-schedule .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 10%; 
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    border-radius: 0%;
+}
+
+#technician-schedule .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; 
+    border-radius: 8px;
+    width: 400px;
+    max-width: 800px;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+#technician-schedule .modal-content h2 {
+    padding: 0 0 0 40px;
+    font-size: 26px;
+    color: #111827;
+}
+
+#technician-schedule .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#technician-schedule .close:hover {
+    color: black;
+}
+
+#technician-schedule #task-form label {
+    display: block;
+    margin-top: 10px;
+    margin-left: 50px;
+    font-size: 25px;
+}
+
+#technician-schedule #task-form input {
+    width: 80%;
+    border-radius: 7px;
+    height: 2.6rem;
+    border: 1px solid rgb(99, 92, 92);
+    outline: none;
+    padding: 0 0 0 40px;
+    font-size: 16px;
+    border: 1px solid rgba(128, 128, 128, 0.44);
+    color: #111827;
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+#technician-schedule #task-form button {
+    margin-top: 15px;
+    padding: 8px 12px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 200px;
+    margin-left: 50px;
+    height: 3rem;
+}
+
+#technician-schedule #task-form button:hover {
+    background-color: #1e4bb8;
+}
