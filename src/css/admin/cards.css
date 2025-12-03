@@ -1,0 +1,75 @@
+#content-area #overview .header, #content-area #order-management .header
+{
+    width: 100%;
+    height: 180px;
+    box-sizing: border-box;
+    display: flex;
+    gap: 20px;
+    background-color: transparent;
+    /*box-shadow: 0 1px 2px rgba(155, 155, 155, 0.4);*/
+}
+
+#content-area #overview .header .cards, #content-area #order-management .header .cards
+{
+    background-color: white;
+    width: 200px;
+    height: 100%;
+    padding: 0 20px 0 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 4px rgba(155, 155, 155, 0.2);
+}
+
+#card1
+{
+    border-left: 4px solid limegreen
+}
+
+#card2
+{
+    border-left: 4px solid lightblue
+}
+
+#card3
+{
+    border-left: 4px solid tomato;
+}
+
+#card4
+{
+    border-left: 4px solid rebeccapurple;
+}
+
+#card5
+{
+    border-left: 4px solid #8b5cf6;
+}
+
+#content-area #overview .header .heading, #content-area #order-management .header .heading
+{
+    width: 100%;
+    height: 70%;
+    border-radius: 0%;
+    color: #4b5563;
+}
+
+#content-area #overview .header .subheading, #content-area #order-management .header .subheading
+{
+    width: 100%;
+    height: 30%;
+    border-radius: 0%;
+    display: flex;
+    align-items:first flex-end;
+}
+
+#content-area #overview .header .heading p:first-child, #content-area #order-management .header .heading p:first-child
+{
+    font-size: 20px;
+}
+
+#content-area #overview .header .heading p:not(:first-child), #content-area #order-management .header .heading p:not(:first-child)
+{
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+    transform: translateY(-30px);
+}

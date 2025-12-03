@@ -15,8 +15,8 @@ body #content-area
 {
     margin: 10px 20px 30px 20px;
     display: flex;
+    box-sizing: border-box;
     flex-grow: 1;
-    position: relative;
 }
 
 #content-area div:nth-child(n+1)
@@ -39,13 +39,14 @@ body #content-area
     box-sizing: border-box;
 }
 
-#overview::-webkit-scrollbar, #product-management::-webkit-scrollbar
+#overview::-webkit-scrollbar, #product-management::-webkit-scrollbar, #order-management::-webkit-scrollbar, #technician-schedule::-webkit-scrollbar
 {
     display: none;
 }
 
 #product-management
 {
+    position: relative;
     margin: 0 40px 0 0;
     z-index: 2;
     display: none;
