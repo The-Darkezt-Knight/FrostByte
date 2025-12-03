@@ -1,0 +1,91 @@
+#main-panel .shelves
+{
+    margin-top: 40px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+#main-panel .shelves .title
+{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#main-panel .shelves .title p
+{
+    padding: 0 0 0 20px;
+    font-size: 18px;
+    color: #111827;
+}
+
+#main-panel .shelves .body
+{
+    display: flex;
+    height: 100%;
+    justify-content: flex-start;
+}
+
+#main-panel .shelves .body .card
+{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 20%;
+}
+
+#main-panel .shelves .body .card:hover
+{
+    transform: scale(1.05);
+}
+
+#main-panel .shelves .body .card .upper
+{
+    background-color: white;
+    height: 70%;
+    border-radius: 7px 7px 0 0;
+}
+
+#main-panel .shelves .body .card .bottom
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0 0 20px 20px;
+    background-color: white;
+    height: 30%;
+    border-radius: 0 0 7px 7px;
+    box-sizing: border-box;
+}
+
+#main-panel .shelves .body .card .upper img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#main-panel .shelves .body .card .bottom p:first-child
+{
+    color: #4b5563;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+#main-panel .shelves .body .card .bottom p:nth-child(2)
+{
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+#main-panel .shelves .body .card .bottom p:last-child
+{
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    margin-top: 8px;
+    color: rgb(33, 120, 154);
+}
