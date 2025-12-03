@@ -1,0 +1,165 @@
+#main-panel #header
+{
+    display: flex;
+    justify-content: flex-start;
+    height: 180px;
+    background: linear-gradient(
+    180deg,
+    #aee3ff 0%,
+    #5bb8ff 40%,
+    #247bff 75%,
+    #003f8c 100%
+    );
+    box-sizing: border-box;
+}
+
+#logo-section
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+    padding-left: 30px;
+}
+
+#logo-section img
+{
+    width: 80px;
+}
+
+#logo-section p
+{
+    font-size: 35px;
+    font-weight: 100;
+    background: linear-gradient(to right, #2563eb, #1e40af);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#main-panel #header span
+{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+#main-panel #header span input[type="search"]
+{
+    width: 90%;
+    border-radius: 7px;
+    height: 2.6rem;
+    border: 1px solid white;
+    outline: none;
+    padding: 0 0 0 20px;
+    font-size: 16px;
+    color: #111827;
+}
+
+#main-panel #header span ul
+{
+    display: flex;
+    gap: 80px;
+    list-style: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+    transform: translateY(20px);
+    user-select: none;
+    cursor: default;
+}
+
+#main-panel .categories, .shelves
+{
+    margin-top: 40px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#main-panel .categories .title
+{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#main-panel .categories .title p
+{
+    padding: 0 0 0 20px;
+    font-size: 18px;
+    color: #111827;
+}
+
+#main-panel .categories .body
+{
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+}
+
+#main-panel .categories .body .card
+{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 20%;
+}
+
+#main-panel .categories .body .card:hover
+{
+    transform: scale(1.05);
+}
+
+#main-panel .categories .body .card .upper
+{
+    background-color: white;
+    height: 70%;
+    border-radius: 7px 7px 0 0;
+}
+
+#main-panel .categories .body .card .bottom
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0 0 20px 20px;
+    background-color: white;
+    height: 30%;
+    border-radius: 0 0 7px 7px;
+    box-sizing: border-box;
+}
+
+#main-panel .categories .body .card .upper img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#main-panel .categories .body .card .bottom p:first-child
+{
+    color: #4b5563;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+#main-panel .categories .body .card .bottom p:nth-child(2)
+{
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+#main-panel .categories .body .card .bottom p:last-child
+{
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    margin-top: 8px;
+    color: rgb(33, 120, 154);
+}
