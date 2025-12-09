@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Table Rendering</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Table Rendering</h1>
+    <table id="services-table">
+        <thead>
+            <tr>
+                <th>Service ID</th>
+                <th>Customer</th>
+                <th>Service Type</th>
+                <th>Technician</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Services will be populated here -->
+        </tbody>
+    </table>
+
+    <script>
+        let scheduleData = {
+            services: [
+                {
+                    id: 'SVC-428',
+                    customer: 'Robert Taylor',
+                    serviceType: 'Custom PC Build',
+                    technician: 'Tech-A'
+                },
+                {
+                    id: 'SVC-427',
+                    customer: 'Linda Martinez',
+                    serviceType: 'GPU Installation',
+                    technician: 'Tech-B'
+                }
+            ]
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOMContentLoaded event fired');
+            console.log('scheduleData.services:', scheduleData.services);
+            
+            const tbody = document.querySelector('#services-table tbody');
+            console.log('tbody element found:', tbody);
+            
+            if (!tbody) {
+                console.error('tbody not found!');
+                return;
+            }
+            
+            const rows = scheduleData.services.map(service => {
+                return `
+                    <tr>
+                        <td>${service.id}</td>
+                        <td>${service.customer}</td>
+                        <td>${service.serviceType}</td>
+                        <td>${service.technician}</td>
+                    </tr>
+                `;
+            }).join('');
+            
+            console.log('Generated rows:', rows);
+            tbody.innerHTML = rows;
+            console.log('tbody.innerHTML set, now contains:', tbody.querySelectorAll('tr').length, 'rows');
+        });
+    </script>
+</body>
+</html>

@@ -127,3 +127,54 @@
     {
         background-color: #0390dc;
     }
+
+/* Users Table Container */
+#user-management #users-table-container
+{
+    position: relative;
+    margin: 20px;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 0 3px 4px rgba(155, 155, 155, 0.1);
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+#user-management #users-table-container .table-section
+{
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+}
+
+/* Role Badge Styling */
+.role-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.role-badge.role-superadmin {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.role-badge.role-admin {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.role-badge.role-technician {
+    background-color: #fcd34d;
+    color: #78350f;
+}
+
+.role-badge.role-user {
+    background-color: #d1fae5;
+    color: #065f46;
+}

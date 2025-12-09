@@ -1,0 +1,472 @@
+/* Orders Page Styles */
+
+.orders-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Orders Header */
+.orders-header {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.orders-header h2 {
+    margin: 0;
+    color: #1f2937;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+/* Orders Controls */
+.orders-controls {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Search Box */
+.search-box {
+    position: relative;
+    flex: 0 0 280px;
+    order: 1;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 14px 10px 36px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 13px;
+    background: white;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #0390dc;
+    box-shadow: 0 0 0 3px rgba(3, 144, 220, 0.1);
+}
+
+.search-box i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+/* Status Filters */
+.status-filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+    order: 2;
+    min-width: 100%;
+    margin-top: -5px;
+}
+
+.status-btn {
+    padding: 8px 14px;
+    border: 1px solid #d1d5db;
+    background: white;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #6b7280;
+    white-space: nowrap;
+}
+
+.status-btn:hover {
+    border-color: #0390dc;
+    color: #0390dc;
+}
+
+.status-btn.active {
+    background: #0390dc;
+    border-color: #0390dc;
+    color: white;
+}
+
+/* Orders List */
+.orders-list {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.orders-list .empty-state {
+    text-align: center;
+    color: #9ca3af;
+    padding: 40px 20px;
+    font-size: 16px;
+}
+
+/* Order Card */
+.order-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 15px;
+    background: #f9fafb;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.order-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: #0390dc;
+}
+
+/* Order Card Header */
+.order-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.order-card-info {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex: 1;
+}
+
+.order-card-id {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.order-card-id .id {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 14px;
+}
+
+.order-card-id .date {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.order-status-badge {
+    padding: 5px 12px;
+    border-radius: 16px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.order-status-badge.pending {
+    background-color: #fef3c7;
+    color: #b45309;
+}
+
+.order-status-badge.to-ship {
+    background-color: #fef3c7;
+    color: #b45309;
+}
+
+.order-status-badge.out-for-delivery {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.order-status-badge.delivered {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.order-status-badge.cancelled {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.order-card-total {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.order-card-total .label {
+    font-size: 11px;
+    color: #6b7280;
+}
+
+.order-card-total .amount {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0390dc;
+}
+
+/* Order Items */
+.order-items {
+    margin-bottom: 12px;
+}
+
+.order-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.order-item-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.order-item-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background: #e5e7eb;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.order-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.order-item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.order-item-name {
+    font-weight: 500;
+    color: #1f2937;
+    font-size: 12px;
+}
+
+.order-item-qty {
+    font-size: 11px;
+    color: #6b7280;
+}
+
+.order-item-price {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 12px;
+}
+
+/* Order Card Actions */
+.order-card-actions {
+    display: flex;
+    gap: 10px;
+    padding-top: 12px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.order-card-actions button {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #d1d5db;
+    background: white;
+}
+
+.order-card-actions button:hover {
+    border-color: #0390dc;
+    color: #0390dc;
+}
+
+.order-card-actions button.view-details {
+    background: #0390dc;
+    color: white;
+    border-color: #0390dc;
+}
+
+.order-card-actions button.view-details:hover {
+    background: #0275b0;
+    border-color: #0275b0;
+}
+
+.order-card-actions button.reorder {
+    background: white;
+    border-color: #d1d5db;
+}
+
+.order-card-actions button.reorder:hover {
+    border-color: #0390dc;
+    color: #0390dc;
+}
+
+/* Reorder Confirmation Modal */
+.reorder-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.reorder-modal.active {
+    display: flex;
+}
+
+.reorder-modal-content {
+    background: white;
+    border-radius: 10px;
+    padding: 40px;
+    max-width: 400px;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.reorder-modal-icon {
+    font-size: 48px;
+    color: #fbbf24;
+    margin-bottom: 20px;
+}
+
+.reorder-modal-content h3 {
+    margin: 0 0 10px 0;
+    color: #1f2937;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.reorder-modal-content p {
+    margin: 0 0 30px 0;
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.reorder-modal-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.reorder-modal-actions button {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.reorder-modal-actions button.cancel {
+    background: #e5e7eb;
+    color: #6b7280;
+}
+
+.reorder-modal-actions button.cancel:hover {
+    background: #d1d5db;
+}
+
+.reorder-modal-actions button.confirm {
+    background: #0390dc;
+    color: white;
+}
+
+.reorder-modal-actions button.confirm:hover {
+    background: #0275b0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .orders-container {
+        gap: 20px;
+    }
+
+    .orders-header,
+    .orders-controls,
+    .orders-list {
+        padding: 20px;
+    }
+
+    .orders-header h2 {
+        font-size: 24px;
+    }
+
+    .orders-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box {
+        flex: 1;
+    }
+
+    .status-filters {
+        flex-direction: column;
+    }
+
+    .status-btn {
+        flex: 1;
+    }
+
+    .order-card-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .order-card-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .order-card-total {
+        align-self: flex-start;
+    }
+
+    .order-card-actions {
+        flex-direction: column;
+    }
+
+    .order-card-actions button {
+        width: 100%;
+    }
+
+    .reorder-modal-content {
+        margin: 20px;
+        max-width: none;
+    }
+}

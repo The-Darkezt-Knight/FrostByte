@@ -1,0 +1,631 @@
+/* Buy Back Management Styles - Matching Admin Design System */
+
+.buyback-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.buyback-header {
+    margin-bottom: 20px;
+}
+
+.buyback-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 5px 0;
+    padding: 0;
+}
+
+.buyback-header p {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0;
+    padding: 0;
+}
+
+/* Stats Section */
+.buyback-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.stat-card {
+    background-color: white;
+    border-left: 4px solid #3b82f6;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 4px rgba(155, 155, 155, 0.2);
+    box-sizing: border-box;
+}
+
+.stat-card:nth-child(2) {
+    border-left-color: #8b5cf6;
+}
+
+.stat-card:nth-child(3) {
+    border-left-color: #10b981;
+}
+
+.stat-card:nth-child(4) {
+    border-left-color: #ef4444;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+/* Filters Section */
+.buyback-filters {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 4px rgba(155, 155, 155, 0.1);
+}
+
+.filter-select,
+.filter-search {
+    padding: 10px 12px;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    color: #374151;
+    font-size: 13px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.filter-select {
+    min-width: 140px;
+    cursor: pointer;
+}
+
+.filter-search {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-select:focus,
+.filter-search:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #f3f4f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Table Section */
+.buyback-table-wrapper {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 4px rgba(155, 155, 155, 0.1);
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.buyback-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1000px;
+}
+
+.buyback-table thead {
+    background-color: #f9fafb;
+}
+
+.buyback-table th {
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    color: #4b5563;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.buyback-table tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+    transition: background-color 0.2s ease;
+}
+
+.buyback-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+.buyback-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.buyback-table td {
+    padding: 12px 20px;
+    color: #374151;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+/* Status Badge */
+.status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.status-pending-review {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.status-offer-sent {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.status-negotiating {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.status-accepted {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.status-rejected {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.status-completed {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+/* Condition Badge */
+.condition-excellent {
+    background-color: #d1fae5;
+    color: #065f46;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.condition-good {
+    background-color: #dbeafe;
+    color: #1e40af;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.condition-fair {
+    background-color: #fef3c7;
+    color: #92400e;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.condition-poor {
+    background-color: #fee2e2;
+    color: #991b1b;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+/* Action Buttons */
+.btn-view {
+    padding: 6px 14px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-view:hover {
+    background-color: #2563eb;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+/* Modal */
+.buyback-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.buyback-modal.active {
+    display: flex;
+}
+
+.buyback-modal-content {
+    background: white;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+.modal-header p {
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #6b7280;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    line-height: 1;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    color: #1f2937;
+}
+
+/* Image Gallery Styles */
+.image-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.main-image {
+    width: 100%;
+    height: 400px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.main-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.thumbnail-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 100px;
+    background: #f9fafb;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    cursor: pointer;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.thumbnail:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.thumbnail.active {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+.section {
+    margin-bottom: 25px;
+}
+
+.section h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item label {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.info-item p {
+    font-size: 14px;
+    color: #1f2937;
+    margin: 0;
+    font-weight: 500;
+}
+
+.offer-input {
+    padding: 10px 12px;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    color: #1f2937;
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.offer-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #f3f4f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-textarea {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    color: #1f2937;
+    font-size: 13px;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 100px;
+    transition: all 0.3s ease;
+}
+
+.form-textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #f3f4f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Description Box */
+.description-box {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 15px;
+    color: #374151;
+    line-height: 1.6;
+    min-height: 120px;
+}
+
+/* Pricing Box */
+.pricing-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.price-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-item label {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.price-item p {
+    margin: 0;
+}
+
+.offer-price-input {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 0 12px;
+    transition: all 0.3s ease;
+}
+
+.offer-price-input:focus-within {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.modal-footer {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    border-top: 1px solid #e5e7eb;
+    justify-content: flex-end;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-danger {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2563eb;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.btn-secondary {
+    background-color: #e5e7eb;
+    color: #374151;
+}
+
+.btn-secondary:hover {
+    background-color: #d1d5db;
+}
+
+.btn-danger {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+.btn-danger:hover {
+    background-color: #fecaca;
+}
+
+/* Scrollbar */
+.buyback-table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.buyback-table-wrapper::-webkit-scrollbar-track {
+    background: #f9fafb;
+}
+
+.buyback-table-wrapper::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 4px;
+}
+
+.buyback-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .buyback-container {
+        padding: 15px;
+    }
+
+    .buyback-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .buyback-filters {
+        flex-direction: column;
+    }
+
+    .filter-select,
+    .filter-search {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .buyback-table {
+        font-size: 12px;
+    }
+
+    .buyback-table th,
+    .buyback-table td {
+        padding: 10px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .buyback-modal-content {
+        width: 95%;
+        max-height: 95vh;
+    }
+}
+

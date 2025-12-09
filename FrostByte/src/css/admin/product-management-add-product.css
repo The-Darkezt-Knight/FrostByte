@@ -18,9 +18,9 @@
 
 #product-management #add-user
 {
-    border-radius: 0%;
     position: fixed;
-    z-index: 3;
+    border-radius: 0%;
+    z-index: 10;
     right: 0;
     top: 0;
     height: 100%;
@@ -104,7 +104,7 @@
 
     #product-management #add-user form #submit-area
     {
-        width: 60%;
+        width: 100%;
         height: auto;
         display: flex;
         justify-content: flex-end;
@@ -114,7 +114,7 @@
     {
         
         height: 3rem;
-        width: 70%;
+        width: 50%;
         padding: 0 30px 0 30px;
         font-size: 15px;
         border-radius: 7px;
@@ -126,4 +126,38 @@
     #product-management #add-user form #submit-area button:hover
     {
         background-color: #0390dc;
+    }
+
+    /* Action buttons in table */
+    #product-management .btn-edit,
+    #product-management .btn-delete {
+        padding: 6px 8px;
+        margin: 0 3px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.2s ease;
+    }
+
+    #product-management .btn-edit {
+        background-color: #3b82f6;
+        color: white;
+    }
+
+    #product-management .btn-edit:hover {
+        background-color: #2563eb;
+    }
+
+    #product-management .btn-delete {
+        background-color: #ef4444;
+        color: white;
+    }
+
+    #product-management .btn-delete:hover {
+        background-color: #dc2626;
+    }
+
+    #product-management table td {
+        text-align: center;
     }

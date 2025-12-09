@@ -1,8 +1,8 @@
-#content-area #product-management nav
+#content-area #product-management nav, #order-management nav
 {
     position: relative;
-    margin: 20px;
-    width: 100%;
+    margin: 20px 20px 10px 20px;
+    width: calc(100% - 40px);
     box-sizing: border-box;
     padding: 10px 20px 10px 20px;
     background-color: white;
@@ -22,7 +22,7 @@
     transform: translateY(-50%);
 }
 
-#product-management input[type="search"]
+#product-management input[type="search"], #order-management input[type="search"]
 {
     width: 33%;
     border-radius: 7px;
@@ -35,12 +35,12 @@
     color: #111827;
 }
 
-#product-management input[type="search"]:focus
+#product-management input[type="search"]:focus, #order-management input[type="search"]:focus
 {
     border: 2px solid skyblue;
 }
 
-#product-management #status, #type
+#product-management #status, #type, #order-management #status
 {
     height: 2.6rem;
     width: 20%;
@@ -97,4 +97,20 @@
     height: 60px;
     font-size: 16px;
     border-bottom: 2px solid skyblue;
+}
+
+
+#order-management nav
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 10px 20px;
+}
+
+#order-management nav #search-icon
+{
+    position: absolute;
+    top: 50%;
+    left: 35px;
+    transform: translateY(-50%);
 }

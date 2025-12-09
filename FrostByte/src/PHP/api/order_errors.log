@@ -1,0 +1,4089 @@
+[04-Dec-2025 18:05:32 Europe/Berlin] Raw request data: {"firstName":"John Doe","companyName":"Test Company","streetAddress":"123 Main St","brgy":"Bata","town":"Bacolod City","phone":"09123456789","email":"john@example.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-001","quantity":1,"subtotal":5000,"shipping":0}}
+[04-Dec-2025 18:05:32 Europe/Berlin] Insert query: order_id=ORD-1764867932, product_id=PROD-001, customer=John Doe
+[04-Dec-2025 18:05:32 Europe/Berlin] Full insert query: INSERT INTO orders 
+(order_id, user_id, customer, product, product_id, amount, quantity, status, payment_method, 
+phone, email, company_name, shipping_address, date, created_at, updated_at) 
+VALUES 
+('ORD-1764867932', '1', 'John Doe', 'Ryzen 9 9600x', 'PROD-001', '5000', '1', 
+'pending', 'cod', '09123456789', 'john@example.com', 'Test Company', '123 Main St, Brgy. Bata, Bacolod City', 
+'2025-12-04 18:05:32', '2025-12-04 18:05:32', '2025-12-04 18:05:32')
+[04-Dec-2025 18:05:32 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`frostbyte`.`orders`, CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE SET NULL) in C:\xampp\htdocs\FrostByte\src\PHP\api\create_order.php:115
+Stack trace:
+#0 C:\xampp\htdocs\FrostByte\src\PHP\api\create_order.php(115): mysqli->query('INSERT INTO ord...')
+#1 {main}
+  thrown in C:\xampp\htdocs\FrostByte\src\PHP\api\create_order.php on line 115
+[04-Dec-2025 18:07:49 Europe/Berlin] Raw request data: {"firstName":"John Doe","companyName":"Test Company","streetAddress":"123 Main St","brgy":"Bata","town":"Bacolod City","phone":"09123456789","email":"john@example.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-001","quantity":1,"subtotal":5000,"shipping":0}}
+[04-Dec-2025 18:07:49 Europe/Berlin] Insert query: order_id=ORD-1764868069, product_id=PROD-001, customer=John Doe
+[04-Dec-2025 18:07:49 Europe/Berlin] Full insert query: INSERT INTO orders 
+(order_id, user_id, customer, product, product_id, amount, quantity, status, payment_method, 
+phone, email, company_name, shipping_address, date, created_at, updated_at) 
+VALUES 
+('ORD-1764868069', 'USR-001', 'John Doe', 'Ryzen 9 9600x', 'PROD-001', '5000', '1', 
+'pending', 'cod', '09123456789', 'john@example.com', 'Test Company', '123 Main St, Brgy. Bata, Bacolod City', 
+'2025-12-04 18:07:49', '2025-12-04 18:07:49', '2025-12-04 18:07:49')
+[04-Dec-2025 18:12:07 Europe/Berlin] Raw request data: {"firstName":"Traumerei","companyName":"","streetAddress":"Baris","brgy":"Mailum","town":"Bago","phone":"09123456789","email":"traum@example.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-003","name":"Gaming Keyboard RGB","category":"Keyboards","quantity":1,"pricePerUnit":"₱5000.00","image":"http://localhost/FrostByte/resources/images/products/Gaming%20Keyboard%20RGB.jpg","subtotal":"5000.00","shipping":0,"totalAmount":5000}}
+[04-Dec-2025 18:12:08 Europe/Berlin] Insert query: order_id=ORD-1764868328, product_id=PROD-003, customer=Traumerei
+[04-Dec-2025 18:12:08 Europe/Berlin] Full insert query: INSERT INTO orders 
+(order_id, user_id, customer, product, product_id, amount, quantity, status, payment_method, 
+phone, email, company_name, shipping_address, date, created_at, updated_at) 
+VALUES 
+('ORD-1764868328', 'USR-001', 'Traumerei', 'Gaming Keyboard RGB', 'PROD-003', '5000', '1', 
+'pending', 'cod', '09123456789', 'traum@example.com', '', 'Baris, Brgy. Mailum, Bago', 
+'2025-12-04 18:12:08', '2025-12-04 18:12:08', '2025-12-04 18:12:08')
+[05-Dec-2025 02:05:46 Europe/Berlin] Raw request data: {"firstName":"Test Customer","companyName":"","streetAddress":"Test Street","brgy":"Test Brgy","town":"Test City","phone":"09123456789","email":"test@example.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-001","quantity":2,"subtotal":5000,"shipping":0}}
+[05-Dec-2025 02:05:46 Europe/Berlin] Insert query: order_id=ORD-1764896746, product_id=PROD-001, customer=Test Customer
+[05-Dec-2025 02:05:46 Europe/Berlin] Full insert query: INSERT INTO orders 
+(order_id, user_id, customer, product, product_id, amount, quantity, status, payment_method, 
+phone, email, company_name, shipping_address, date, created_at, updated_at) 
+VALUES 
+('ORD-1764896746', 'USR-001', 'Test Customer', 'Ryzen 9 9600x', 'PROD-001', '5000', '2', 
+'pending', 'cod', '09123456789', 'test@example.com', '', 'Test Street, Brgy. Test Brgy, Test City', 
+'2025-12-05 02:05:46', '2025-12-05 02:05:46', '2025-12-05 02:05:46')
+[05-Dec-2025 02:05:46 Europe/Berlin] Order created, now deducting stock: product_id=PROD-001, quantity=2
+[05-Dec-2025 02:05:46 Europe/Berlin] Stock deducted successfully for product_id=PROD-001
+[05-Dec-2025 02:09:44 Europe/Berlin] Raw request data: {"firstName":"Test Customer","companyName":"","streetAddress":"Test Street","brgy":"Test Brgy","town":"Test City","phone":"09123456789","email":"test@example.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-001","quantity":23,"subtotal":5000,"shipping":0}}
+[05-Dec-2025 02:09:44 Europe/Berlin] Insufficient stock: product_id=PROD-001, requested=23, available=18
+[05-Dec-2025 02:14:12 Europe/Berlin] Raw request data: {"firstName":"Lee Ruben","companyName":"","streetAddress":"Baris","brgy":"Mailum","town":"Bago","phone":"09123456789","email":"ben@gmail.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-004","name":"Logitech MX Master 3","category":"Mouse","quantity":15,"pricePerUnit":"₱4500.00","image":"http://localhost/FrostByte/resources/images/products/Logitech%20MX%20Master%203.jpg","subtotal":"67500.00","shipping":0,"totalAmount":67500}}
+[05-Dec-2025 02:14:12 Europe/Berlin] Insufficient stock: product_id=PROD-004, requested=15, available=12
+[05-Dec-2025 02:22:51 Europe/Berlin] Raw request data: {"firstName":"Lee Ruben","companyName":"","streetAddress":"Baris","brgy":"Mailum","town":"Bago","phone":"09123456789","email":"ben@gmail.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-003","name":"Gaming Keyboard RGB","category":"Keyboards","quantity":16,"pricePerUnit":"₱5000.00","image":"http://localhost/FrostByte/resources/images/products/Gaming%20Keyboard%20RGB.jpg","subtotal":"80000.00","shipping":0,"totalAmount":80000}}
+[05-Dec-2025 02:22:51 Europe/Berlin] Insufficient stock: product_id=PROD-003, requested=16, available=15
+[05-Dec-2025 02:22:54 Europe/Berlin] Raw request data: {"firstName":"Lee Ruben","companyName":"","streetAddress":"Baris","brgy":"Mailum","town":"Bago","phone":"09123456789","email":"ben@gmail.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-003","name":"Gaming Keyboard RGB","category":"Keyboards","quantity":16,"pricePerUnit":"₱5000.00","image":"http://localhost/FrostByte/resources/images/products/Gaming%20Keyboard%20RGB.jpg","subtotal":"80000.00","shipping":0,"totalAmount":80000}}
+[05-Dec-2025 02:22:54 Europe/Berlin] Insufficient stock: product_id=PROD-003, requested=16, available=15
+[05-Dec-2025 02:22:54 Europe/Berlin] Raw request data: {"firstName":"Lee Ruben","companyName":"","streetAddress":"Baris","brgy":"Mailum","town":"Bago","phone":"09123456789","email":"ben@gmail.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-003","name":"Gaming Keyboard RGB","category":"Keyboards","quantity":16,"pricePerUnit":"₱5000.00","image":"http://localhost/FrostByte/resources/images/products/Gaming%20Keyboard%20RGB.jpg","subtotal":"80000.00","shipping":0,"totalAmount":80000}}
+[05-Dec-2025 02:22:54 Europe/Berlin] Insufficient stock: product_id=PROD-003, requested=16, available=15
+[05-Dec-2025 02:22:54 Europe/Berlin] Raw request data: {"firstName":"Lee Ruben","companyName":"","streetAddress":"Baris","brgy":"Mailum","town":"Bago","phone":"09123456789","email":"ben@gmail.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-003","name":"Gaming Keyboard RGB","category":"Keyboards","quantity":16,"pricePerUnit":"₱5000.00","image":"http://localhost/FrostByte/resources/images/products/Gaming%20Keyboard%20RGB.jpg","subtotal":"80000.00","shipping":0,"totalAmount":80000}}
+[05-Dec-2025 02:22:54 Europe/Berlin] Insufficient stock: product_id=PROD-003, requested=16, available=15
+[05-Dec-2025 02:22:54 Europe/Berlin] Raw request data: {"firstName":"Lee Ruben","companyName":"","streetAddress":"Baris","brgy":"Mailum","town":"Bago","phone":"09123456789","email":"ben@gmail.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-003","name":"Gaming Keyboard RGB","category":"Keyboards","quantity":16,"pricePerUnit":"₱5000.00","image":"http://localhost/FrostByte/resources/images/products/Gaming%20Keyboard%20RGB.jpg","subtotal":"80000.00","shipping":0,"totalAmount":80000}}
+[05-Dec-2025 02:22:54 Europe/Berlin] Insufficient stock: product_id=PROD-003, requested=16, available=15
+[05-Dec-2025 02:23:00 Europe/Berlin] Raw request data: {"firstName":"Lee Ruben","companyName":"","streetAddress":"Baris","brgy":"Mailum","town":"Bago","phone":"09123456789","email":"ben@gmail.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-003","name":"Gaming Keyboard RGB","category":"Keyboards","quantity":16,"pricePerUnit":"₱5000.00","image":"http://localhost/FrostByte/resources/images/products/Gaming%20Keyboard%20RGB.jpg","subtotal":"80000.00","shipping":0,"totalAmount":80000}}
+[05-Dec-2025 02:23:00 Europe/Berlin] Insufficient stock: product_id=PROD-003, requested=16, available=15
+[05-Dec-2025 02:23:03 Europe/Berlin] Raw request data: {"firstName":"Lee Ruben","companyName":"","streetAddress":"Baris","brgy":"Mailum","town":"Bago","phone":"09123456789","email":"ben@gmail.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-003","name":"Gaming Keyboard RGB","category":"Keyboards","quantity":16,"pricePerUnit":"₱5000.00","image":"http://localhost/FrostByte/resources/images/products/Gaming%20Keyboard%20RGB.jpg","subtotal":"80000.00","shipping":0,"totalAmount":80000}}
+[05-Dec-2025 02:23:03 Europe/Berlin] Insufficient stock: product_id=PROD-003, requested=16, available=15
+[05-Dec-2025 02:23:36 Europe/Berlin] Raw request data: {"firstName":"Lee Ruben","companyName":"","streetAddress":"Baris","brgy":"Mailum","town":"Bago","phone":"09123456789","email":"ben@gmail.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-003","name":"Gaming Keyboard RGB","category":"Keyboards","quantity":1,"pricePerUnit":"₱5000.00","image":"http://localhost/FrostByte/resources/images/products/Gaming%20Keyboard%20RGB.jpg","subtotal":"5000.00","shipping":0,"totalAmount":5000}}
+[05-Dec-2025 02:23:36 Europe/Berlin] Insert query: order_id=ORD-1764897816, product_id=PROD-003, customer=Lee Ruben
+[05-Dec-2025 02:23:36 Europe/Berlin] Full insert query: INSERT INTO orders 
+(order_id, user_id, customer, product, product_id, amount, quantity, status, payment_method, 
+phone, email, company_name, shipping_address, date, created_at, updated_at) 
+VALUES 
+('ORD-1764897816', 'USR-001', 'Lee Ruben', 'Gaming Keyboard RGB', 'PROD-003', '5000', '1', 
+'pending', 'cod', '09123456789', 'ben@gmail.com', '', 'Baris, Brgy. Mailum, Bago', 
+'2025-12-05 02:23:36', '2025-12-05 02:23:36', '2025-12-05 02:23:36')
+[05-Dec-2025 02:23:36 Europe/Berlin] Order created, now deducting stock: product_id=PROD-003, quantity=1
+[05-Dec-2025 02:23:36 Europe/Berlin] Stock deducted successfully for product_id=PROD-003
+[05-Dec-2025 09:54:06 Europe/Berlin] Raw request data: {"firstName":"Lee Ruben","companyName":"","streetAddress":"Baris","brgy":"Mailum","town":"Bago","phone":"09123456789","email":"ben@gmail.com","paymentMethod":"cod","checkoutData":{"items":[{"productId":"PROD-008","name":"Corsair Vengeance 16GB DDR4","category":"Memory","price":3450,"image":"http://localhost/FrostByte/resources/images/products/Corsair%20Vengeance%2016GB%20DDR4.jpg","quantity":1},{"productId":"PROD-010","name":"Seagate Barracuda 2TB","category":"HDD","price":3290,"image":"http://localhost/FrostByte/resources/images/products/Seagate%20Barracuda%202TB.jpg","quantity":1},{"productId":"PROD-007","name":"ASUS TUF B550-Plus","category":"Motherboard","price":8990,"image":"http://localhost/FrostByte/resources/images/products/ASUS%20TUF%20B550-Plus.jpg","quantity":1},{"productId":"PROD-004","name":"Logitech MX Master 3","category":"Mouse","price":4500,"image":"http://localhost/FrostByte/resources/images/products/Logitech%20MX%20Master%203.jpg","quantity":1},{"productId":"PROD-009","name":"Cooler Master MWE 650W","category":"Power Supply","price":2850,"image":"http://localhost/FrostByte/resources/images/products/Cooler%20Master%20MWE%20650W.jpg","quantity":1},{"productId":"PROD-001","name":"Ryzen 9 9600x","category":"Processor","price":28000,"image":"http://localhost/FrostByte/resources/images/products/Ryzen%209%209600x.jpg","quantity":1},{"productId":"PROD-003","name":"Gaming Keyboard RGB","category":"Keyboards","price":5000,"image":"http://localhost/FrostByte/resources/images/products/Gaming%20Keyboard%20RGB.jpg","quantity":1}],"subtotal":"56080.00","shipping":0,"total":"56080.00","itemCount":7,"totalAmount":56080}}
+[05-Dec-2025 09:54:06 Europe/Berlin] Order created: order_id=ORD-1764924846-0, product_id=PROD-008, quantity=1
+[05-Dec-2025 09:54:06 Europe/Berlin] Order created: order_id=ORD-1764924846-1, product_id=PROD-010, quantity=1
+[05-Dec-2025 09:54:06 Europe/Berlin] Order created: order_id=ORD-1764924846-2, product_id=PROD-007, quantity=1
+[05-Dec-2025 09:54:06 Europe/Berlin] Order created: order_id=ORD-1764924846-3, product_id=PROD-004, quantity=1
+[05-Dec-2025 09:54:06 Europe/Berlin] Order created: order_id=ORD-1764924846-4, product_id=PROD-009, quantity=1
+[05-Dec-2025 09:54:06 Europe/Berlin] Order created: order_id=ORD-1764924846-5, product_id=PROD-001, quantity=1
+[05-Dec-2025 09:54:06 Europe/Berlin] Order created: order_id=ORD-1764924846-6, product_id=PROD-003, quantity=1
+[05-Dec-2025 10:14:05 Europe/Berlin] Raw request data: {"firstName":"Traumerei","companyName":"","streetAddress":"Baris","brgy":"Mailum","town":"Bago","phone":"09123456789","email":"ben@gmail.com","paymentMethod":"cod","checkoutData":{"items":[{"productId":"PROD-008","name":"Corsair Vengeance 16GB DDR4","category":"Memory","price":3450,"image":"http://localhost/FrostByte/resources/images/products/Corsair%20Vengeance%2016GB%20DDR4.jpg","quantity":1},{"productId":"PROD-010","name":"Seagate Barracuda 2TB","category":"HDD","price":3290,"image":"http://localhost/FrostByte/resources/images/products/Seagate%20Barracuda%202TB.jpg","quantity":1},{"productId":"PROD-007","name":"ASUS TUF B550-Plus","category":"Motherboard","price":8990,"image":"http://localhost/FrostByte/resources/images/products/ASUS%20TUF%20B550-Plus.jpg","quantity":1},{"productId":"PROD-004","name":"Logitech MX Master 3","category":"Mouse","price":4500,"image":"http://localhost/FrostByte/resources/images/products/Logitech%20MX%20Master%203.jpg","quantity":1},{"productId":"PROD-009","name":"Cooler Master MWE 650W","category":"Power Supply","price":2850,"image":"http://localhost/FrostByte/resources/images/products/Cooler%20Master%20MWE%20650W.jpg","quantity":1},{"productId":"PROD-001","name":"Ryzen 9 9600x","category":"Processor","price":28000,"image":"http://localhost/FrostByte/resources/images/products/Ryzen%209%209600x.jpg","quantity":1},{"productId":"PROD-003","name":"Gaming Keyboard RGB","category":"Keyboards","price":5000,"image":"http://localhost/FrostByte/resources/images/products/Gaming%20Keyboard%20RGB.jpg","quantity":1}],"subtotal":"56080.00","shipping":0,"total":"56080.00","itemCount":7,"totalAmount":56080}}
+[05-Dec-2025 10:14:05 Europe/Berlin] Decoded data: {"firstName":"Traumerei","companyName":"","streetAddress":"Baris","brgy":"Mailum","town":"Bago","phone":"09123456789","email":"ben@gmail.com","paymentMethod":"cod","checkoutData":{"items":[{"productId":"PROD-008","name":"Corsair Vengeance 16GB DDR4","category":"Memory","price":3450,"image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/Corsair%20Vengeance%2016GB%20DDR4.jpg","quantity":1},{"productId":"PROD-010","name":"Seagate Barracuda 2TB","category":"HDD","price":3290,"image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/Seagate%20Barracuda%202TB.jpg","quantity":1},{"productId":"PROD-007","name":"ASUS TUF B550-Plus","category":"Motherboard","price":8990,"image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/ASUS%20TUF%20B550-Plus.jpg","quantity":1},{"productId":"PROD-004","name":"Logitech MX Master 3","category":"Mouse","price":4500,"image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/Logitech%20MX%20Master%203.jpg","quantity":1},{"productId":"PROD-009","name":"Cooler Master MWE 650W","category":"Power Supply","price":2850,"image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/Cooler%20Master%20MWE%20650W.jpg","quantity":1},{"productId":"PROD-001","name":"Ryzen 9 9600x","category":"Processor","price":28000,"image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/Ryzen%209%209600x.jpg","quantity":1},{"productId":"PROD-003","name":"Gaming Keyboard RGB","category":"Keyboards","price":5000,"image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/Gaming%20Keyboard%20RGB.jpg","quantity":1}],"subtotal":"56080.00","shipping":0,"total":"56080.00","itemCount":7,"totalAmount":56080}}
+[05-Dec-2025 10:14:05 Europe/Berlin] Cart checkout detected with 7 items: [{"productId":"PROD-008","name":"Corsair Vengeance 16GB DDR4","category":"Memory","price":3450,"image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/Corsair%20Vengeance%2016GB%20DDR4.jpg","quantity":1},{"productId":"PROD-010","name":"Seagate Barracuda 2TB","category":"HDD","price":3290,"image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/Seagate%20Barracuda%202TB.jpg","quantity":1},{"productId":"PROD-007","name":"ASUS TUF B550-Plus","category":"Motherboard","price":8990,"image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/ASUS%20TUF%20B550-Plus.jpg","quantity":1},{"productId":"PROD-004","name":"Logitech MX Master 3","category":"Mouse","price":4500,"image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/Logitech%20MX%20Master%203.jpg","quantity":1},{"productId":"PROD-009","name":"Cooler Master MWE 650W","category":"Power Supply","price":2850,"image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/Cooler%20Master%20MWE%20650W.jpg","quantity":1},{"productId":"PROD-001","name":"Ryzen 9 9600x","category":"Processor","price":28000,"image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/Ryzen%209%209600x.jpg","quantity":1},{"productId":"PROD-003","name":"Gaming Keyboard RGB","category":"Keyboards","price":5000,"image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/Gaming%20Keyboard%20RGB.jpg","quantity":1}]
+[05-Dec-2025 10:14:05 Europe/Berlin] Using userId: USR-003
+[05-Dec-2025 10:14:05 Europe/Berlin] Processing item: productId=PROD-008, quantity=1
+[05-Dec-2025 10:14:05 Europe/Berlin] Processing item: productId=PROD-010, quantity=1
+[05-Dec-2025 10:14:05 Europe/Berlin] Processing item: productId=PROD-007, quantity=1
+[05-Dec-2025 10:14:05 Europe/Berlin] Processing item: productId=PROD-004, quantity=1
+[05-Dec-2025 10:14:05 Europe/Berlin] Processing item: productId=PROD-009, quantity=1
+[05-Dec-2025 10:14:05 Europe/Berlin] Processing item: productId=PROD-001, quantity=1
+[05-Dec-2025 10:14:05 Europe/Berlin] Processing item: productId=PROD-003, quantity=1
+[05-Dec-2025 10:14:05 Europe/Berlin] Starting order creation. Total items: 7, Amount per item: 8011.4285714286
+[05-Dec-2025 10:14:05 Europe/Berlin] Creating order: orderNumber=ORD-1764926045-0, productId=PROD-008, productName=Corsair Vengeance 16GB DDR4, quantity=1, userId=USR-003
+[05-Dec-2025 10:14:05 Europe/Berlin] Insert query: INSERT INTO orders 
+    (order_id, user_id, customer, product, product_id, amount, quantity, status, payment_method, 
+    phone, email, company_name, shipping_address, date, created_at, updated_at) 
+    VALUES 
+    ('ORD-1764926045-0', 'USR-003', 'Traumerei', 'Corsair Vengeance 16GB DDR4', 'PROD-008', '8011.4285714286', '1', 
+    'pending', 'cod', '09123456789', 'ben@gmail.com', '', 'Baris, Brgy. Mailum, Bago', 
+    '2025-12-05 10:14:05', '2025-12-05 10:14:05', '2025-12-05 10:14:05')
+[05-Dec-2025 10:14:05 Europe/Berlin] Order created: order_id=ORD-1764926045-0, product_id=PROD-008, quantity=1
+[05-Dec-2025 10:14:05 Europe/Berlin] Creating order: orderNumber=ORD-1764926045-1, productId=PROD-010, productName=Seagate Barracuda 2TB, quantity=1, userId=USR-003
+[05-Dec-2025 10:14:05 Europe/Berlin] Insert query: INSERT INTO orders 
+    (order_id, user_id, customer, product, product_id, amount, quantity, status, payment_method, 
+    phone, email, company_name, shipping_address, date, created_at, updated_at) 
+    VALUES 
+    ('ORD-1764926045-1', 'USR-003', 'Traumerei', 'Seagate Barracuda 2TB', 'PROD-010', '8011.4285714286', '1', 
+    'pending', 'cod', '09123456789', 'ben@gmail.com', '', 'Baris, Brgy. Mailum, Bago', 
+    '2025-12-05 10:14:05', '2025-12-05 10:14:05', '2025-12-05 10:14:05')
+[05-Dec-2025 10:14:05 Europe/Berlin] Order created: order_id=ORD-1764926045-1, product_id=PROD-010, quantity=1
+[05-Dec-2025 10:14:05 Europe/Berlin] Creating order: orderNumber=ORD-1764926045-2, productId=PROD-007, productName=ASUS TUF B550-Plus, quantity=1, userId=USR-003
+[05-Dec-2025 10:14:05 Europe/Berlin] Insert query: INSERT INTO orders 
+    (order_id, user_id, customer, product, product_id, amount, quantity, status, payment_method, 
+    phone, email, company_name, shipping_address, date, created_at, updated_at) 
+    VALUES 
+    ('ORD-1764926045-2', 'USR-003', 'Traumerei', 'ASUS TUF B550-Plus', 'PROD-007', '8011.4285714286', '1', 
+    'pending', 'cod', '09123456789', 'ben@gmail.com', '', 'Baris, Brgy. Mailum, Bago', 
+    '2025-12-05 10:14:05', '2025-12-05 10:14:05', '2025-12-05 10:14:05')
+[05-Dec-2025 10:14:05 Europe/Berlin] Order created: order_id=ORD-1764926045-2, product_id=PROD-007, quantity=1
+[05-Dec-2025 10:14:05 Europe/Berlin] Creating order: orderNumber=ORD-1764926045-3, productId=PROD-004, productName=Logitech MX Master 3, quantity=1, userId=USR-003
+[05-Dec-2025 10:14:05 Europe/Berlin] Insert query: INSERT INTO orders 
+    (order_id, user_id, customer, product, product_id, amount, quantity, status, payment_method, 
+    phone, email, company_name, shipping_address, date, created_at, updated_at) 
+    VALUES 
+    ('ORD-1764926045-3', 'USR-003', 'Traumerei', 'Logitech MX Master 3', 'PROD-004', '8011.4285714286', '1', 
+    'pending', 'cod', '09123456789', 'ben@gmail.com', '', 'Baris, Brgy. Mailum, Bago', 
+    '2025-12-05 10:14:05', '2025-12-05 10:14:05', '2025-12-05 10:14:05')
+[05-Dec-2025 10:14:05 Europe/Berlin] Order created: order_id=ORD-1764926045-3, product_id=PROD-004, quantity=1
+[05-Dec-2025 10:14:05 Europe/Berlin] Creating order: orderNumber=ORD-1764926045-4, productId=PROD-009, productName=Cooler Master MWE 650W, quantity=1, userId=USR-003
+[05-Dec-2025 10:14:05 Europe/Berlin] Insert query: INSERT INTO orders 
+    (order_id, user_id, customer, product, product_id, amount, quantity, status, payment_method, 
+    phone, email, company_name, shipping_address, date, created_at, updated_at) 
+    VALUES 
+    ('ORD-1764926045-4', 'USR-003', 'Traumerei', 'Cooler Master MWE 650W', 'PROD-009', '8011.4285714286', '1', 
+    'pending', 'cod', '09123456789', 'ben@gmail.com', '', 'Baris, Brgy. Mailum, Bago', 
+    '2025-12-05 10:14:05', '2025-12-05 10:14:05', '2025-12-05 10:14:05')
+[05-Dec-2025 10:14:05 Europe/Berlin] Order created: order_id=ORD-1764926045-4, product_id=PROD-009, quantity=1
+[05-Dec-2025 10:14:05 Europe/Berlin] Creating order: orderNumber=ORD-1764926045-5, productId=PROD-001, productName=Ryzen 9 9600x, quantity=1, userId=USR-003
+[05-Dec-2025 10:14:05 Europe/Berlin] Insert query: INSERT INTO orders 
+    (order_id, user_id, customer, product, product_id, amount, quantity, status, payment_method, 
+    phone, email, company_name, shipping_address, date, created_at, updated_at) 
+    VALUES 
+    ('ORD-1764926045-5', 'USR-003', 'Traumerei', 'Ryzen 9 9600x', 'PROD-001', '8011.4285714286', '1', 
+    'pending', 'cod', '09123456789', 'ben@gmail.com', '', 'Baris, Brgy. Mailum, Bago', 
+    '2025-12-05 10:14:05', '2025-12-05 10:14:05', '2025-12-05 10:14:05')
+[05-Dec-2025 10:14:05 Europe/Berlin] Order created: order_id=ORD-1764926045-5, product_id=PROD-001, quantity=1
+[05-Dec-2025 10:14:05 Europe/Berlin] Creating order: orderNumber=ORD-1764926045-6, productId=PROD-003, productName=Gaming Keyboard RGB, quantity=1, userId=USR-003
+[05-Dec-2025 10:14:05 Europe/Berlin] Insert query: INSERT INTO orders 
+    (order_id, user_id, customer, product, product_id, amount, quantity, status, payment_method, 
+    phone, email, company_name, shipping_address, date, created_at, updated_at) 
+    VALUES 
+    ('ORD-1764926045-6', 'USR-003', 'Traumerei', 'Gaming Keyboard RGB', 'PROD-003', '8011.4285714286', '1', 
+    'pending', 'cod', '09123456789', 'ben@gmail.com', '', 'Baris, Brgy. Mailum, Bago', 
+    '2025-12-05 10:14:05', '2025-12-05 10:14:05', '2025-12-05 10:14:05')
+[05-Dec-2025 10:14:05 Europe/Berlin] Order created: order_id=ORD-1764926045-6, product_id=PROD-003, quantity=1
+[05-Dec-2025 11:58:19 Europe/Berlin] Raw request data: {"firstName":"Bryan","companyName":"","streetAddress":"Baris","brgy":"Mailum","town":"Murcia","phone":"09123456789","email":"bry@gmail.com","paymentMethod":"cod","checkoutData":{"items":[{"productId":"PROD-004","name":"Logitech MX Master 3","category":"Mouse","price":4500,"image":"http://localhost/FrostByte/resources/images/products/Logitech%20MX%20Master%203.jpg","quantity":1}],"subtotal":"4500.00","shipping":0,"total":"4500.00","itemCount":1,"totalAmount":4500}}
+[05-Dec-2025 11:58:19 Europe/Berlin] Decoded data: {"firstName":"Bryan","companyName":"","streetAddress":"Baris","brgy":"Mailum","town":"Murcia","phone":"09123456789","email":"bry@gmail.com","paymentMethod":"cod","checkoutData":{"items":[{"productId":"PROD-004","name":"Logitech MX Master 3","category":"Mouse","price":4500,"image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/Logitech%20MX%20Master%203.jpg","quantity":1}],"subtotal":"4500.00","shipping":0,"total":"4500.00","itemCount":1,"totalAmount":4500}}
+[05-Dec-2025 11:58:19 Europe/Berlin] Cart checkout detected with 1 items: [{"productId":"PROD-004","name":"Logitech MX Master 3","category":"Mouse","price":4500,"image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/Logitech%20MX%20Master%203.jpg","quantity":1}]
+[05-Dec-2025 11:58:19 Europe/Berlin] Using userId: USR-6932b7e5bfc26, session_status: set
+[05-Dec-2025 11:58:19 Europe/Berlin] Processing item: productId=PROD-004, quantity=1
+[05-Dec-2025 11:58:19 Europe/Berlin] Starting order creation. Total items: 1, Amount per item: 4500
+[05-Dec-2025 11:58:19 Europe/Berlin] Creating order: orderNumber=ORD-1764932299-0, productId=PROD-004, productName=Logitech MX Master 3, quantity=1, userId=USR-6932b7e5bfc26
+[05-Dec-2025 11:58:19 Europe/Berlin] Insert query: INSERT INTO orders 
+    (order_id, user_id, customer, product, product_id, amount, quantity, status, payment_method, 
+    phone, email, company_name, shipping_address, date, created_at, updated_at) 
+    VALUES 
+    ('ORD-1764932299-0', 'USR-6932b7e5bfc26', 'Bryan', 'Logitech MX Master 3', 'PROD-004', '4500', '1', 
+    'pending', 'cod', '09123456789', 'bry@gmail.com', '', 'Baris, Brgy. Mailum, Murcia', 
+    '2025-12-05 11:58:19', '2025-12-05 11:58:19', '2025-12-05 11:58:19')
+[05-Dec-2025 11:58:19 Europe/Berlin] Order created: order_id=ORD-1764932299-0, product_id=PROD-004, quantity=1
+[05-Dec-2025 15:19:19 Europe/Berlin] Raw request data: {"firstName":"Bryan","companyName":"","streetAddress":"Baris","brgy":"Mailum","town":"Murcia","phone":"09123456789","email":"bry@gmail.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-007","name":"ASUS TUF B550-Plus","category":"Motherboard","quantity":1,"pricePerUnit":"₱8990.00","image":"http://localhost/FrostByte/resources/images/products/ASUS%20TUF%20B550-Plus.jpg","subtotal":"8990.00","shipping":0,"totalAmount":8990}}
+[05-Dec-2025 15:19:19 Europe/Berlin] Decoded data: {"firstName":"Bryan","companyName":"","streetAddress":"Baris","brgy":"Mailum","town":"Murcia","phone":"09123456789","email":"bry@gmail.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-007","name":"ASUS TUF B550-Plus","category":"Motherboard","quantity":1,"pricePerUnit":"\u20b18990.00","image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/ASUS%20TUF%20B550-Plus.jpg","subtotal":"8990.00","shipping":0,"totalAmount":8990}}
+[05-Dec-2025 15:19:19 Europe/Berlin] Single product checkout detected: [{"productId":"PROD-007","quantity":1,"price":8990}]
+[05-Dec-2025 15:19:19 Europe/Berlin] Using userId: USR-6932b7e5bfc26, session_status: set
+[05-Dec-2025 15:19:19 Europe/Berlin] Processing item: productId=PROD-007, quantity=1
+[05-Dec-2025 15:19:19 Europe/Berlin] Starting order creation. Total items: 1, Amount per item: 8990
+[05-Dec-2025 15:19:19 Europe/Berlin] Creating order: orderNumber=ORD-1764944359-0, productId=PROD-007, productName=ASUS TUF B550-Plus, quantity=1, userId=USR-6932b7e5bfc26
+[05-Dec-2025 15:19:19 Europe/Berlin] Insert query: INSERT INTO orders 
+    (order_id, user_id, customer, product, product_id, amount, quantity, status, payment_method, 
+    phone, email, company_name, shipping_address, date, created_at, updated_at) 
+    VALUES 
+    ('ORD-1764944359-0', 'USR-6932b7e5bfc26', 'Bryan', 'ASUS TUF B550-Plus', 'PROD-007', '8990', '1', 
+    'pending', 'cod', '09123456789', 'bry@gmail.com', '', 'Baris, Brgy. Mailum, Murcia', 
+    '2025-12-05 15:19:19', '2025-12-05 15:19:19', '2025-12-05 15:19:19')
+[05-Dec-2025 15:19:19 Europe/Berlin] Order created: order_id=ORD-1764944359-0, product_id=PROD-007, quantity=1
+[06-Dec-2025 08:56:37 Europe/Berlin] Raw request data: {"firstName":"Glenn","companyName":"","streetAddress":"NGC","brgy":"Villamonte","town":"Bacolod","phone":"09291212123","email":"gert@gmail.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-010","name":"Seagate Barracuda 2TB","category":"HDD","quantity":1,"pricePerUnit":"₱3290.00","image":"http://localhost/FrostByte/resources/images/products/Seagate%20Barracuda%202TB.jpg","subtotal":"3290.00","shipping":0,"totalAmount":3290}}
+[06-Dec-2025 08:56:37 Europe/Berlin] Decoded data: {"firstName":"Glenn","companyName":"","streetAddress":"NGC","brgy":"Villamonte","town":"Bacolod","phone":"09291212123","email":"gert@gmail.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-010","name":"Seagate Barracuda 2TB","category":"HDD","quantity":1,"pricePerUnit":"\u20b13290.00","image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/Seagate%20Barracuda%202TB.jpg","subtotal":"3290.00","shipping":0,"totalAmount":3290}}
+[06-Dec-2025 08:56:37 Europe/Berlin] Single product checkout detected: [{"productId":"PROD-010","quantity":1,"price":3290}]
+[06-Dec-2025 08:56:37 Europe/Berlin] Using userId: USR-6933e0d9e252b, session_status: set
+[06-Dec-2025 08:56:37 Europe/Berlin] Processing item: productId=PROD-010, quantity=1
+[06-Dec-2025 08:56:37 Europe/Berlin] Starting order creation. Total items: 1, Amount per item: 3290
+[06-Dec-2025 08:56:37 Europe/Berlin] Creating order: orderNumber=ORD-1765007797-0, productId=PROD-010, productName=Seagate Barracuda 2TB, quantity=1, userId=USR-6933e0d9e252b
+[06-Dec-2025 08:56:37 Europe/Berlin] Insert query: INSERT INTO orders 
+    (order_id, user_id, customer, product, product_id, amount, quantity, status, payment_method, 
+    phone, email, company_name, shipping_address, date, created_at, updated_at) 
+    VALUES 
+    ('ORD-1765007797-0', 'USR-6933e0d9e252b', 'Glenn', 'Seagate Barracuda 2TB', 'PROD-010', '3290', '1', 
+    'pending', 'cod', '09291212123', 'gert@gmail.com', '', 'NGC, Brgy. Villamonte, Bacolod', 
+    '2025-12-06 08:56:37', '2025-12-06 08:56:37', '2025-12-06 08:56:37')
+[06-Dec-2025 08:56:37 Europe/Berlin] Order created: order_id=ORD-1765007797-0, product_id=PROD-010, quantity=1
+[06-Dec-2025 11:16:36 Europe/Berlin] Raw request data: {"firstName":"John Bryan Pinaga","companyName":"","streetAddress":"Baris","brgy":"Murcia","town":"Murcia","phone":"09937329241","email":"babap1104@gmail.com","paymentMethod":"bank","checkoutData":{"items":[{"productId":"PROD-008","name":"Corsair Vengeance 16GB DDR4","category":"Memory","price":3450,"image":"http://localhost/FrostByte/resources/images/products/Corsair%20Vengeance%2016GB%20DDR4.jpg","quantity":1}],"subtotal":"3450.00","shipping":0,"total":"3450.00","itemCount":1,"totalAmount":3450}}
+[06-Dec-2025 11:16:36 Europe/Berlin] Decoded data: {"firstName":"John Bryan Pinaga","companyName":"","streetAddress":"Baris","brgy":"Murcia","town":"Murcia","phone":"09937329241","email":"babap1104@gmail.com","paymentMethod":"bank","checkoutData":{"items":[{"productId":"PROD-008","name":"Corsair Vengeance 16GB DDR4","category":"Memory","price":3450,"image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/Corsair%20Vengeance%2016GB%20DDR4.jpg","quantity":1}],"subtotal":"3450.00","shipping":0,"total":"3450.00","itemCount":1,"totalAmount":3450}}
+[06-Dec-2025 11:16:36 Europe/Berlin] Cart checkout detected with 1 items: [{"productId":"PROD-008","name":"Corsair Vengeance 16GB DDR4","category":"Memory","price":3450,"image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/Corsair%20Vengeance%2016GB%20DDR4.jpg","quantity":1}]
+[06-Dec-2025 11:16:36 Europe/Berlin] Using userId: USR-6932b7e5bfc26, session_status: set
+[06-Dec-2025 11:16:36 Europe/Berlin] Processing item: productId=PROD-008, quantity=1
+[06-Dec-2025 11:16:36 Europe/Berlin] Starting order creation. Total items: 1, Amount per item: 3450
+[06-Dec-2025 11:16:36 Europe/Berlin] Creating order: orderNumber=ORD-1765016196-0, productId=PROD-008, productName=Corsair Vengeance 16GB DDR4, quantity=1, userId=USR-6932b7e5bfc26
+[06-Dec-2025 11:16:36 Europe/Berlin] Insert query: INSERT INTO orders 
+    (order_id, user_id, customer, product, product_id, amount, quantity, status, payment_method, 
+    phone, email, company_name, shipping_address, date, created_at, updated_at) 
+    VALUES 
+    ('ORD-1765016196-0', 'USR-6932b7e5bfc26', 'John Bryan Pinaga', 'Corsair Vengeance 16GB DDR4', 'PROD-008', '3450', '1', 
+    'pending', 'bank', '09937329241', 'babap1104@gmail.com', '', 'Baris, Brgy. Murcia, Murcia', 
+    '2025-12-06 11:16:36', '2025-12-06 11:16:36', '2025-12-06 11:16:36')
+[06-Dec-2025 11:16:36 Europe/Berlin] Order created: order_id=ORD-1765016196-0, product_id=PROD-008, quantity=1
+[06-Dec-2025 14:04:59 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 14:04:59 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 14:04:59 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 14:28:08 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 14:28:08 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 14:28:08 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 14:28:27 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 14:28:27 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 14:28:27 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 14:28:27 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 14:28:27 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 14:28:27 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 14:37:53 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 14:37:53 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 14:37:53 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 14:37:53 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 14:37:53 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 14:37:53 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 14:38:22 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 14:38:22 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 14:38:22 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 15:01:33 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 15:01:33 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 15:01:33 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 15:02:08 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 15:02:08 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 15:02:08 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 15:03:29 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 15:03:29 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 15:03:29 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 15:05:07 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 15:05:07 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 15:05:07 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 15:05:28 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 15:05:28 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 15:05:28 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 15:05:28 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 15:05:28 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 15:05:28 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 15:46:13 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 15:46:13 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 15:46:13 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 15:46:29 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 15:46:29 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 15:46:29 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 15:46:30 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 15:46:30 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 15:46:30 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 15:47:04 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 15:47:04 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 15:47:04 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 16:03:18 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 16:03:18 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 16:03:18 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 16:03:30 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 16:03:30 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 16:03:30 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 16:03:30 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 16:03:30 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 16:03:30 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 16:03:30 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 16:03:30 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 16:03:30 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 16:03:30 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 16:03:30 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 16:03:30 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 16:05:42 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 16:05:42 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 16:05:42 Europe/Berlin] Successfully fetched 22 orders
+[06-Dec-2025 16:07:21 Europe/Berlin] Raw request data: {"firstName":"Bryan","companyName":"","streetAddress":"Baris","brgy":"Murcia","town":"Murcia","phone":"09123456789","email":"bry@gmail.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-004","name":"Logitech MX Master 3","category":"Mouse","quantity":1,"pricePerUnit":"₱4500.00","image":"http://localhost/FrostByte/resources/images/products/Logitech%20MX%20Master%203.jpg","subtotal":"4500.00","shipping":0,"totalAmount":4500}}
+[06-Dec-2025 16:07:21 Europe/Berlin] Decoded data: {"firstName":"Bryan","companyName":"","streetAddress":"Baris","brgy":"Murcia","town":"Murcia","phone":"09123456789","email":"bry@gmail.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-004","name":"Logitech MX Master 3","category":"Mouse","quantity":1,"pricePerUnit":"\u20b14500.00","image":"http:\/\/localhost\/FrostByte\/resources\/images\/products\/Logitech%20MX%20Master%203.jpg","subtotal":"4500.00","shipping":0,"totalAmount":4500}}
+[06-Dec-2025 16:07:21 Europe/Berlin] Single product checkout detected: [{"productId":"PROD-004","quantity":1,"price":4500}]
+[06-Dec-2025 16:07:21 Europe/Berlin] Using userId: USR-6932b7e5bfc26, session_status: set
+[06-Dec-2025 16:07:21 Europe/Berlin] Processing item: productId=PROD-004, quantity=1
+[06-Dec-2025 16:07:21 Europe/Berlin] Starting order creation. Total items: 1, Amount per item: 4500
+[06-Dec-2025 16:07:21 Europe/Berlin] Creating order: orderNumber=ORD-1765033641-0, productId=PROD-004, productName=Logitech MX Master 3, quantity=1, userId=USR-6932b7e5bfc26
+[06-Dec-2025 16:07:21 Europe/Berlin] Insert query: INSERT INTO orders 
+    (order_id, user_id, customer, product, product_id, amount, quantity, status, payment_method, 
+    phone, email, company_name, shipping_address, date, created_at, updated_at) 
+    VALUES 
+    ('ORD-1765033641-0', 'USR-6932b7e5bfc26', 'Bryan', 'Logitech MX Master 3', 'PROD-004', '4500', '1', 
+    'pending', 'cod', '09123456789', 'bry@gmail.com', '', 'Baris, Brgy. Murcia, Murcia', 
+    '2025-12-06 16:07:21', '2025-12-06 16:07:21', '2025-12-06 16:07:21')
+[06-Dec-2025 16:07:21 Europe/Berlin] Order created: order_id=ORD-1765033641-0, product_id=PROD-004, quantity=1
+[06-Dec-2025 16:08:07 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 16:08:07 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 16:08:07 Europe/Berlin] Successfully fetched 23 orders
+[06-Dec-2025 16:13:38 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 16:13:38 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 16:13:38 Europe/Berlin] Successfully fetched 23 orders
+[06-Dec-2025 16:30:23 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 16:30:23 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 16:30:23 Europe/Berlin] Successfully fetched 23 orders
+[06-Dec-2025 16:42:55 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 16:42:55 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 16:42:55 Europe/Berlin] Successfully fetched 23 orders
+[06-Dec-2025 16:54:29 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 16:54:29 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 16:54:29 Europe/Berlin] Successfully fetched 23 orders
+[06-Dec-2025 16:57:03 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'u.address' in 'field list' in C:\xampp\htdocs\FrostByte\src\PHP\api\get_order_details.php:58
+Stack trace:
+#0 C:\xampp\htdocs\FrostByte\src\PHP\api\get_order_details.php(58): mysqli->prepare('SELECT \r\n    o....')
+#1 {main}
+  thrown in C:\xampp\htdocs\FrostByte\src\PHP\api\get_order_details.php on line 58
+[06-Dec-2025 17:06:14 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 17:06:14 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 17:06:14 Europe/Berlin] Successfully fetched 23 orders
+[06-Dec-2025 17:08:54 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 17:08:54 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 17:08:54 Europe/Berlin] Successfully fetched 23 orders
+[06-Dec-2025 17:11:23 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 17:11:23 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 17:11:23 Europe/Berlin] Successfully fetched 23 orders
+[06-Dec-2025 17:11:34 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 17:11:34 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 17:11:34 Europe/Berlin] Successfully fetched 23 orders
+[06-Dec-2025 17:11:51 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 17:11:51 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 17:11:51 Europe/Berlin] Successfully fetched 23 orders
+[06-Dec-2025 20:08:02 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[06-Dec-2025 20:08:02 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[06-Dec-2025 20:08:02 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 03:17:12 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 03:17:12 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 03:17:12 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 03:17:31 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 03:17:31 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 03:17:31 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 03:19:32 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 03:19:32 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 03:19:32 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 03:19:39 Europe/Berlin] Order approval error: Order not found or already approved
+[07-Dec-2025 03:19:41 Europe/Berlin] Order approval error: Order not found or already approved
+[07-Dec-2025 03:19:42 Europe/Berlin] Order approval error: Order not found or already approved
+[07-Dec-2025 03:54:32 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 03:54:33 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 03:54:33 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 03:54:39 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 03:54:39 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 03:54:39 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 03:54:40 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 03:54:40 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 03:54:40 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 04:03:09 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 04:03:09 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 04:03:09 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 05:27:06 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 05:27:06 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 05:27:06 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 14:59:31 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 14:59:31 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 14:59:31 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 15:51:59 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 15:51:59 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 15:51:59 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 16:15:28 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 16:15:28 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 16:15:28 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 16:16:45 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 16:16:45 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 16:16:45 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 16:18:15 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 16:18:15 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 16:18:15 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 16:18:24 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 16:18:24 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 16:18:24 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 16:31:40 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 16:31:40 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 16:31:40 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 16:32:18 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 16:32:18 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 16:32:18 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 16:44:49 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 16:44:49 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 16:44:49 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 16:45:06 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 16:45:06 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 16:45:06 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 16:45:13 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 16:45:13 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 16:45:13 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 16:45:14 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 16:45:14 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 16:45:14 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 16:45:14 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 16:45:14 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 16:45:14 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 16:45:14 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 16:45:14 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 16:45:14 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 16:47:35 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 16:47:35 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 16:47:35 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 16:48:08 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 16:48:08 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 16:48:08 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 16:48:08 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 16:48:08 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 16:48:08 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 16:55:25 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 16:55:25 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 16:55:25 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 17:04:06 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 17:04:06 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 17:04:06 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 17:23:06 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 17:23:06 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 17:23:06 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 17:32:11 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 17:32:11 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 17:32:11 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 17:40:30 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 17:40:30 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 17:40:30 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 18:06:15 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 18:06:15 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 18:06:15 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 18:30:45 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 18:30:45 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 18:30:45 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 18:32:11 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 18:32:11 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 18:32:11 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 18:33:18 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 18:33:18 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 18:33:18 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 18:33:18 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 18:33:18 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 18:33:18 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 18:33:24 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 18:33:24 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 18:33:24 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 18:34:50 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 18:34:50 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 18:34:50 Europe/Berlin] Successfully fetched 23 orders
+[07-Dec-2025 19:09:21 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[07-Dec-2025 19:09:21 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[07-Dec-2025 19:09:21 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 00:58:17 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 00:58:17 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 00:58:17 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 01:02:41 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 01:02:41 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 01:02:41 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 01:02:44 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 01:02:44 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 01:02:44 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 01:02:52 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 01:02:52 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 01:02:52 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 01:53:53 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 01:53:53 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 01:53:53 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 01:56:02 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 01:56:02 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 01:56:02 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 02:26:11 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 02:26:11 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 02:26:11 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 02:30:03 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 02:30:03 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 02:30:03 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 02:45:32 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 02:45:32 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 02:45:32 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 02:46:25 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 02:46:25 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 02:46:25 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 02:46:36 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 02:46:36 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 02:46:36 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 02:46:36 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 02:46:36 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 02:46:36 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 02:46:36 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 02:46:36 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 02:46:36 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 02:47:08 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 02:47:08 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 02:47:08 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 02:53:49 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 02:53:49 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 02:53:49 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 02:54:58 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 02:54:58 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 02:54:58 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 08:02:30 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 08:02:30 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 08:02:30 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 08:04:22 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 08:04:22 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 08:04:22 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 08:05:16 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 08:05:16 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 08:05:16 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 08:07:42 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 08:07:42 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 08:07:42 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 08:13:44 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 08:13:45 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 08:13:45 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 08:14:45 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 08:14:45 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 08:14:45 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 12:53:30 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 12:53:30 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 12:53:30 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 12:54:43 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 12:54:43 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 12:54:43 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 12:55:29 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 12:55:29 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 12:55:29 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 16:20:28 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 16:20:29 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 16:20:29 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 16:28:46 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 16:28:46 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 16:28:46 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 17:24:28 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 17:24:28 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 17:24:28 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 17:24:52 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 17:24:52 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 17:24:52 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 17:25:39 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 17:25:39 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 17:25:39 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 18:22:03 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 18:22:03 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 18:22:03 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 18:22:08 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 18:22:08 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 18:22:08 Europe/Berlin] Successfully fetched 23 orders
+[08-Dec-2025 18:36:20 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[08-Dec-2025 18:36:20 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[08-Dec-2025 18:36:20 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 00:00:54 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 00:00:54 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 00:00:54 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 00:01:34 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 00:01:34 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 00:01:34 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 00:06:17 Europe/Berlin] Order approval error: Order not found or already approved
+[09-Dec-2025 00:06:19 Europe/Berlin] Order approval error: Order not found or already approved
+[09-Dec-2025 00:06:25 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 00:06:25 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 00:06:25 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 00:15:04 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 00:15:04 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 00:15:04 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 00:15:04 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 00:15:04 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 00:15:04 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 00:15:30 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 00:15:30 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 00:15:30 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 00:23:13 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 00:23:13 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 00:23:13 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 00:23:38 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 00:23:38 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 00:23:38 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 00:29:30 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 00:29:30 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 00:29:30 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 02:29:20 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 02:29:20 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 02:29:20 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 02:31:35 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 02:31:35 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 02:31:35 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 02:35:54 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 02:35:54 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 02:35:54 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 02:39:41 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 02:39:41 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 02:39:41 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 02:46:57 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 02:46:57 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 02:46:57 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 02:47:58 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 02:47:58 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 02:47:58 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 03:05:17 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 03:05:17 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 03:05:17 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 03:15:36 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 03:15:36 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 03:15:36 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 04:13:40 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:13:40 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:13:40 Europe/Berlin] Successfully fetched 0 orders
+[09-Dec-2025 04:19:50 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:19:50 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:19:50 Europe/Berlin] Successfully fetched 0 orders
+[09-Dec-2025 04:20:31 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:20:31 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:20:31 Europe/Berlin] Successfully fetched 0 orders
+[09-Dec-2025 04:21:00 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:21:00 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:21:00 Europe/Berlin] Successfully fetched 0 orders
+[09-Dec-2025 04:21:00 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:21:00 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:21:00 Europe/Berlin] Successfully fetched 0 orders
+[09-Dec-2025 04:24:34 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:24:34 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:24:34 Europe/Berlin] Successfully fetched 0 orders
+[09-Dec-2025 04:25:24 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:25:24 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:25:24 Europe/Berlin] Successfully fetched 0 orders
+[09-Dec-2025 04:40:13 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:40:13 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:40:13 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 04:41:05 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:41:05 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:41:05 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 04:42:32 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:42:32 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:42:32 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 04:43:05 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:43:05 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:43:05 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 04:47:03 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:47:04 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:47:04 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 04:47:13 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:47:13 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:47:13 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 04:47:27 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:47:27 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:47:27 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 04:47:52 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:47:52 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:47:52 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 04:48:23 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:48:23 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:48:23 Europe/Berlin] Successfully fetched 23 orders
+[09-Dec-2025 04:51:03 Europe/Berlin] Raw request data: {"firstName":"Bryan","companyName":"","streetAddress":"Baris","brgy":"Abo Abo","town":"Bacolod","phone":"09123456789","email":"bry@gmail.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-003","name":"Gaming Keyboard RGB","category":"Keyboards","quantity":1,"pricePerUnit":"₱5000.00","image":"http://localhost/resources/images/products/Gaming+Keyboard+RGB.jpg","subtotal":"5000.00","shipping":0,"totalAmount":5000}}
+[09-Dec-2025 04:51:03 Europe/Berlin] Decoded data: {"firstName":"Bryan","companyName":"","streetAddress":"Baris","brgy":"Abo Abo","town":"Bacolod","phone":"09123456789","email":"bry@gmail.com","paymentMethod":"cod","checkoutData":{"productId":"PROD-003","name":"Gaming Keyboard RGB","category":"Keyboards","quantity":1,"pricePerUnit":"\u20b15000.00","image":"http:\/\/localhost\/resources\/images\/products\/Gaming+Keyboard+RGB.jpg","subtotal":"5000.00","shipping":0,"totalAmount":5000}}
+[09-Dec-2025 04:51:03 Europe/Berlin] Single product checkout detected: [{"productId":"PROD-003","quantity":1,"price":5000}]
+[09-Dec-2025 04:51:03 Europe/Berlin] Using userId: USR-6932b7e5bfc26, session_status: set
+[09-Dec-2025 04:51:03 Europe/Berlin] Processing item: productId=PROD-003, quantity=1
+[09-Dec-2025 04:51:03 Europe/Berlin] Starting order creation. Total items: 1, Amount per item: 5000
+[09-Dec-2025 04:51:03 Europe/Berlin] Creating order: orderNumber=ORD-1765252263-0, productId=PROD-003, productName=Gaming Keyboard RGB, quantity=1, userId=USR-6932b7e5bfc26
+[09-Dec-2025 04:51:03 Europe/Berlin] Insert query: INSERT INTO orders 
+    (order_id, user_id, customer, product, product_id, amount, quantity, status, payment_method, 
+    phone, email, company_name, shipping_address, date, created_at, updated_at) 
+    VALUES 
+    ('ORD-1765252263-0', 'USR-6932b7e5bfc26', 'Bryan', 'Gaming Keyboard RGB', 'PROD-003', '5000', '1', 
+    'pending', 'cod', '09123456789', 'bry@gmail.com', '', 'Baris, Brgy. Abo Abo, Bacolod', 
+    '2025-12-09 04:51:03', '2025-12-09 04:51:03', '2025-12-09 04:51:03')
+[09-Dec-2025 04:51:03 Europe/Berlin] Order created: order_id=ORD-1765252263-0, product_id=PROD-003, quantity=1
+[09-Dec-2025 04:51:55 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:51:55 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:51:55 Europe/Berlin] Successfully fetched 1 orders
+[09-Dec-2025 04:52:02 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:52:02 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:52:02 Europe/Berlin] Successfully fetched 1 orders
+[09-Dec-2025 04:53:55 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:53:55 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:53:55 Europe/Berlin] Successfully fetched 1 orders
+[09-Dec-2025 04:54:42 Europe/Berlin] Order approval error: Order not found or already approved
+[09-Dec-2025 04:54:47 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:54:47 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:54:47 Europe/Berlin] Successfully fetched 1 orders
+[09-Dec-2025 04:54:48 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 04:54:48 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 04:54:48 Europe/Berlin] Successfully fetched 1 orders
+[09-Dec-2025 05:53:38 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 05:53:38 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 05:53:38 Europe/Berlin] Successfully fetched 1 orders
+[09-Dec-2025 06:24:58 Europe/Berlin] Raw request data: {"firstName":"Alvin","companyName":"","streetAddress":"Baris","brgy":"Mailum","town":"Kabankalan","phone":"09123456789","email":"alvin@gmail.com","paymentMethod":"cod","checkoutData":{"items":[{"productId":"PROD-010","name":"Seagate Barracuda 2TB","category":"HDD","price":3290,"image":"http://localhost/resources/images/products/Seagate+Barracuda+2TB.jpg","quantity":1}],"subtotal":"3290.00","shipping":0,"total":"3290.00","itemCount":1,"totalAmount":3290}}
+[09-Dec-2025 06:24:58 Europe/Berlin] Decoded data: {"firstName":"Alvin","companyName":"","streetAddress":"Baris","brgy":"Mailum","town":"Kabankalan","phone":"09123456789","email":"alvin@gmail.com","paymentMethod":"cod","checkoutData":{"items":[{"productId":"PROD-010","name":"Seagate Barracuda 2TB","category":"HDD","price":3290,"image":"http:\/\/localhost\/resources\/images\/products\/Seagate+Barracuda+2TB.jpg","quantity":1}],"subtotal":"3290.00","shipping":0,"total":"3290.00","itemCount":1,"totalAmount":3290}}
+[09-Dec-2025 06:24:58 Europe/Berlin] Cart checkout detected with 1 items: [{"productId":"PROD-010","name":"Seagate Barracuda 2TB","category":"HDD","price":3290,"image":"http:\/\/localhost\/resources\/images\/products\/Seagate+Barracuda+2TB.jpg","quantity":1}]
+[09-Dec-2025 06:24:58 Europe/Berlin] Using userId: USR-6937b26996652, session_status: set
+[09-Dec-2025 06:24:58 Europe/Berlin] Processing item: productId=PROD-010, quantity=1
+[09-Dec-2025 06:24:58 Europe/Berlin] Starting order creation. Total items: 1, Amount per item: 3290
+[09-Dec-2025 06:24:58 Europe/Berlin] Creating order: orderNumber=ORD-1765257898-0, productId=PROD-010, productName=Seagate Barracuda 2TB, quantity=1, userId=USR-6937b26996652
+[09-Dec-2025 06:24:58 Europe/Berlin] Insert query: INSERT INTO orders 
+    (order_id, user_id, customer, product, product_id, amount, quantity, status, payment_method, 
+    phone, email, company_name, shipping_address, date, created_at, updated_at) 
+    VALUES 
+    ('ORD-1765257898-0', 'USR-6937b26996652', 'Alvin', 'Seagate Barracuda 2TB', 'PROD-010', '3290', '1', 
+    'pending', 'cod', '09123456789', 'alvin@gmail.com', '', 'Baris, Brgy. Mailum, Kabankalan', 
+    '2025-12-09 06:24:58', '2025-12-09 06:24:58', '2025-12-09 06:24:58')
+[09-Dec-2025 06:24:58 Europe/Berlin] Order created: order_id=ORD-1765257898-0, product_id=PROD-010, quantity=1
+[09-Dec-2025 06:26:29 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 06:26:29 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 06:26:29 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 06:27:24 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 06:27:24 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 06:27:24 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 06:42:00 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 06:42:00 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 06:42:00 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 07:01:04 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 07:01:04 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 07:01:04 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 07:12:38 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 07:12:38 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 07:12:38 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 07:17:09 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 07:17:09 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 07:17:09 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 07:18:34 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 07:18:34 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 07:18:34 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 07:24:19 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 07:24:19 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 07:24:19 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 07:39:41 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 07:39:41 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 07:39:41 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 07:41:54 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 07:41:54 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 07:41:54 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 07:44:20 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 07:44:20 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 07:44:20 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 07:44:26 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 07:44:26 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 07:44:26 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 07:44:26 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 07:44:26 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 07:44:26 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 07:47:11 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 07:47:12 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 07:47:12 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 07:50:51 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 07:50:51 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 07:50:51 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 07:50:59 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 07:50:59 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 07:50:59 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 07:51:28 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 07:51:28 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 07:51:29 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 07:55:54 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 07:55:54 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 07:55:54 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 08:07:00 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 08:07:00 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 08:07:00 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 08:30:55 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 08:30:55 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 08:30:55 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 08:31:55 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 08:31:55 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 08:31:55 Europe/Berlin] Successfully fetched 2 orders
+[09-Dec-2025 09:40:11 Europe/Berlin] Fetching orders with query: SELECT 
+    o.order_id, 
+    o.customer as customer_name,
+    u.fullname,
+    u.email,
+    o.product,
+    o.quantity as total_items,
+    o.amount as total_amount,
+    o.status,
+    o.date as order_date,
+    'Not specified' as payment_method
+FROM orders o
+LEFT JOIN users u ON o.user_id = u.user_id
+ORDER BY o.date DESC
+LIMIT 100
+[09-Dec-2025 09:40:11 Europe/Berlin] Fetching stats with query: SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN status = 'pending_payment' THEN 1 ELSE 0 END) as pending_payment,
+    SUM(CASE WHEN status = 'processing' THEN 1 ELSE 0 END) as processing,
+    SUM(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END) as shipped,
+    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as delivered
+FROM orders
+[09-Dec-2025 09:40:11 Europe/Berlin] Successfully fetched 2 orders

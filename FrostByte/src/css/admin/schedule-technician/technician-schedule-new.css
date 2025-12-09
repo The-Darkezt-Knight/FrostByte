@@ -1,0 +1,511 @@
+/* Technician Schedule - Modern Design */
+
+#technician-schedule {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow-y: auto;
+    padding: 24px;
+    background: linear-gradient(to bottom, #f0f9ff, #ffffff);
+    min-height: 100%;
+}
+
+/* Header Section */
+#technician-schedule #header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #ffffff, #eff6ff);
+    padding: 20px 24px;
+    border-radius: 12px;
+    border: 1px solid #bfdbfe;
+    box-shadow: 0 2px 8px rgba(3, 144, 220, 0.1);
+}
+
+#technician-schedule #header p {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+#technician-schedule #header button {
+    height: 40px;
+    padding: 0 24px;
+    background: linear-gradient(135deg, #0390dc 0%, #0280c7 100%);
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#technician-schedule #header button:hover {
+    background: linear-gradient(135deg, #0280c7 0%, #0270b0 100%);
+    box-shadow: 0 4px 12px rgba(3, 144, 220, 0.3);
+    transform: translateY(-2px);
+}
+
+#technician-schedule #header button:active {
+    transform: translateY(0);
+}
+
+/* Body - Main Content */
+#technician-schedule #body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Schedule Cards */
+#technician-schedule #body .container {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+#technician-schedule #body .container:hover {
+    border-color: #bfdbfe;
+    box-shadow: 0 4px 16px rgba(3, 144, 220, 0.12);
+    transform: translateY(-2px);
+}
+
+/* Card Top Section */
+#technician-schedule #body .container .top {
+    display: flex;
+    align-items: stretch;
+    min-height: 100px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Service Icon Section */
+#technician-schedule #body .container .top .service-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+    border-right: 1px solid #bfdbfe;
+    font-size: 32px;
+    color: #0390dc;
+    flex-shrink: 0;
+}
+
+/* Information Section */
+#technician-schedule #body .container .top .information {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px 20px;
+    gap: 6px;
+}
+
+#technician-schedule #body .container .top .information .service-type {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+}
+
+#technician-schedule #body .container .top .information .customer-info {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0;
+    display: flex;
+    gap: 16px;
+}
+
+#technician-schedule #body .container .top .information .customer-info span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Status Section */
+#technician-schedule #body .container .top .status-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 20px;
+    gap: 8px;
+    border-left: 1px solid #f0f0f0;
+    flex-shrink: 0;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-badge.scheduled {
+    background: #dbeafe;
+    color: #0c4a6e;
+}
+
+.status-badge.in-progress {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.status-badge.completed {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-badge.cancelled {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Actions Section */
+#technician-schedule #body .container .top .actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border-left: 1px solid #f0f0f0;
+}
+
+.action-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    color: #6b7280;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    font-size: 14px;
+}
+
+.action-btn:hover {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    color: #0390dc;
+}
+
+.action-btn.edit:hover {
+    background: #dbeafe;
+}
+
+.action-btn.delete:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* Card Bottom Section - Details */
+#technician-schedule #body .container .bottom {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: #e5e7eb;
+    border-top: 1px solid #f0f0f0;
+}
+
+#technician-schedule #body .container .bottom .detail {
+    background: #ffffff;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#technician-schedule #body .container .bottom .detail:first-child {
+    border-radius: 0 0 0 12px;
+}
+
+#technician-schedule #body .container .bottom .detail:last-child {
+    border-radius: 0 0 12px 0;
+}
+
+#technician-schedule #body .container .bottom .detail label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+#technician-schedule #body .container .bottom .detail p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 500px;
+    animation: slideUp 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-content .close {
+    display: block;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 16px 20px;
+    transition: color 0.2s;
+}
+
+.modal-content .close:hover {
+    color: #1f2937;
+}
+
+.modal-content h2 {
+    margin: 0;
+    padding: 24px 24px 0 24px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+#task-form {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#task-form label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 6px;
+}
+
+#task-form input,
+#task-form select,
+#task-form textarea {
+    padding: 10px 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    background: #f9fafb;
+    color: #1f2937;
+    transition: all 0.2s;
+}
+
+#task-form input:focus,
+#task-form select:focus,
+#task-form textarea:focus {
+    outline: none;
+    border-color: #0390dc;
+    background: #eff6ff;
+}
+
+#task-form input::placeholder {
+    color: #9ca3af;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#task-form button[type="submit"] {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #0390dc 0%, #0280c7 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 8px;
+}
+
+#task-form button[type="submit"]:hover {
+    background: linear-gradient(135deg, #0280c7 0%, #0270b0 100%);
+    box-shadow: 0 4px 12px rgba(3, 144, 220, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Filters Section */
+.filter-section {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    background: #ffffff;
+    padding: 16px 24px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+.filter-section input,
+.filter-section select {
+    padding: 10px 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 13px;
+    background: #f9fafb;
+    color: #1f2937;
+    flex: 1;
+    min-width: 150px;
+}
+
+.filter-section input::placeholder {
+    color: #9ca3af;
+}
+
+.filter-section input:focus,
+.filter-section select:focus {
+    outline: none;
+    border-color: #0390dc;
+    background: #eff6ff;
+}
+
+/* Empty State */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    gap: 16px;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 2px dashed #e5e7eb;
+}
+
+.empty-state-icon {
+    font-size: 48px;
+    color: #d1d5db;
+}
+
+.empty-state-text {
+    font-size: 16px;
+    color: #6b7280;
+    text-align: center;
+}
+
+.empty-state-button {
+    padding: 10px 20px;
+    background: #0390dc;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.empty-state-button:hover {
+    background: #0280c7;
+    box-shadow: 0 4px 12px rgba(3, 144, 220, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    #technician-schedule #body .container .bottom {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #technician-schedule #header {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+
+    #technician-schedule #body .container .top {
+        flex-wrap: wrap;
+    }
+
+    #technician-schedule #body .container .top .service-icon {
+        width: 80px;
+        font-size: 24px;
+    }
+
+    #technician-schedule #body .container .top .status-section,
+    #technician-schedule #body .container .top .actions {
+        width: 100%;
+        justify-content: space-between;
+        border-left: none;
+        border-top: 1px solid #f0f0f0;
+    }
+
+    #technician-schedule #body .container .bottom {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+}

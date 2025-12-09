@@ -1,0 +1,100 @@
+/* Container */
+
+#account-settings #container
+{
+    height: 100vh;
+    width: 100%;
+    overflow-y: auto;
+
+}
+
+#account-settings {
+    border-radius: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 98vh;
+    overflow-y: hidden;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar
+{
+    display: none;
+}
+
+.settings-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1f2937;
+}
+
+.settings-card {
+    background: #f9fafb;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.settings-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #111827;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-content label {
+    font-weight: 500;
+    color: #374151;
+}
+
+.card-content input[type="text"],
+.card-content input[type="email"],
+.card-content input[type="password"] {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.card-content input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 5px rgba(59,130,246,0.3);
+}
+
+.card-content input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #3b82f6;
+}
+
+.save-btn {
+    padding: 12px 25px;
+    background-color: #3b82f6;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.save-btn:hover {
+    background-color: #2563eb;
+    transform: scale(1.03);
+}

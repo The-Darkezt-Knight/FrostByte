@@ -1,0 +1,792 @@
+[05-Dec-2025 11:38:37 Europe/Berlin] Signup request: {"fullname":"Traumerei Lopobia","email":"traum@gmail.com","password":"123123","confirm_password":"123123","gender":"Male","city":"Bacolod"}
+[05-Dec-2025 11:38:37 Europe/Berlin] Insert query: INSERT INTO users 
+(user_id, fullname, email, password, gender, city, role, status, orders, total_spent, join_date, created_at, updated_at) 
+VALUES 
+('USR-6932b62dcdaf0', 'Traumerei Lopobia', 'traum@gmail.com', '96cae35ce8a9b0244178bf28e4966c2ce1b8385723a96a6b838858cdd6ca0a1e', 'Male', 'Bacolod', 'user', 'active', 0, 0.00, '2025-12-05 11:38:37', '2025-12-05 11:38:37', '2025-12-05 11:38:37')
+[05-Dec-2025 11:38:37 Europe/Berlin] User registered successfully: user_id=USR-6932b62dcdaf0, email=traum@gmail.com
+[05-Dec-2025 11:38:41 Europe/Berlin] Signup request: {"fullname":"Traumerei Lopobia","email":"traum@gmail.com","password":"123123","confirm_password":"123123","gender":"Male","city":"Bacolod"}
+[05-Dec-2025 11:45:57 Europe/Berlin] Signup request: {"fullname":"John Bryan Pinaga","email":"bry@gmail.com","password":"123123","confirm_password":"123123","gender":"Male","city":"Murcia"}
+[05-Dec-2025 11:45:57 Europe/Berlin] Insert query: INSERT INTO users 
+(user_id, fullname, email, password, gender, city, role, status, orders, total_spent, join_date, created_at, updated_at) 
+VALUES 
+('USR-6932b7e5bfc26', 'John Bryan Pinaga', 'bry@gmail.com', '96cae35ce8a9b0244178bf28e4966c2ce1b8385723a96a6b838858cdd6ca0a1e', 'Male', 'Murcia', 'user', 'active', 0, 0.00, '2025-12-05 11:45:57', '2025-12-05 11:45:57', '2025-12-05 11:45:57')
+[05-Dec-2025 11:45:57 Europe/Berlin] User registered successfully: user_id=USR-6932b7e5bfc26, email=bry@gmail.com
+[05-Dec-2025 11:54:41 Europe/Berlin] Login request: {"email":"jose@frostbyte.com","password":"123123"}
+[05-Dec-2025 11:54:41 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'jose@frostbyte.com'
+[05-Dec-2025 11:54:41 Europe/Berlin] Login failed: Incorrect password - email=jose@frostbyte.com
+[05-Dec-2025 11:54:42 Europe/Berlin] Login request: {"email":"jose@frostbyte.com","password":"123123"}
+[05-Dec-2025 11:54:42 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'jose@frostbyte.com'
+[05-Dec-2025 11:54:42 Europe/Berlin] Login failed: Incorrect password - email=jose@frostbyte.com
+[05-Dec-2025 11:55:09 Europe/Berlin] Login request: {"email":"jose@frostbyte.com","password":"123123"}
+[05-Dec-2025 11:55:09 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'jose@frostbyte.com'
+[05-Dec-2025 11:55:09 Europe/Berlin] Login failed: Incorrect password - email=jose@frostbyte.com
+[05-Dec-2025 11:55:28 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[05-Dec-2025 11:55:28 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 11:55:28 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[05-Dec-2025 13:47:26 Europe/Berlin] === LOGOUT INITIATED ===
+[05-Dec-2025 13:47:26 Europe/Berlin] Session ID: 2r9okflhncnr5j80r8jmursi8q
+[05-Dec-2025 13:47:26 Europe/Berlin] Session status before destroy: 2
+[05-Dec-2025 13:47:26 Europe/Berlin] Unsetting session variable: user_id
+[05-Dec-2025 13:47:26 Europe/Berlin] Unsetting session variable: fullname
+[05-Dec-2025 13:47:26 Europe/Berlin] Unsetting session variable: email
+[05-Dec-2025 13:47:26 Europe/Berlin] Unsetting session variable: role
+[05-Dec-2025 13:47:26 Europe/Berlin] Session array cleared
+[05-Dec-2025 13:47:26 Europe/Berlin] Session destroyed. Status: 1
+[05-Dec-2025 13:47:26 Europe/Berlin] Session cookie cleared
+[05-Dec-2025 13:47:26 Europe/Berlin] === LOGOUT COMPLETE ===
+[05-Dec-2025 13:52:21 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[05-Dec-2025 13:52:21 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 13:52:21 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[05-Dec-2025 13:52:27 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[05-Dec-2025 13:52:27 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 13:52:27 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[05-Dec-2025 13:52:28 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[05-Dec-2025 13:52:28 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 13:52:28 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[05-Dec-2025 13:52:28 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[05-Dec-2025 13:52:28 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 13:52:28 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[05-Dec-2025 13:52:28 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[05-Dec-2025 13:52:28 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 13:52:28 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[05-Dec-2025 13:52:31 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[05-Dec-2025 13:52:31 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 13:52:31 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[05-Dec-2025 13:52:31 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[05-Dec-2025 13:52:31 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 13:52:31 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[05-Dec-2025 13:52:32 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[05-Dec-2025 13:52:32 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 13:52:32 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[05-Dec-2025 13:52:32 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[05-Dec-2025 13:52:32 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 13:52:32 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[05-Dec-2025 13:52:32 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[05-Dec-2025 13:52:32 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 13:52:32 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[05-Dec-2025 13:52:33 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[05-Dec-2025 13:52:33 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 13:52:33 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[05-Dec-2025 13:52:33 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[05-Dec-2025 13:52:33 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 13:52:33 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[05-Dec-2025 13:53:03 Europe/Berlin] === LOGOUT INITIATED ===
+[05-Dec-2025 13:53:03 Europe/Berlin] Session ID: o6mo796ilhi5sbifmljeqtsg35
+[05-Dec-2025 13:53:03 Europe/Berlin] Session status before destroy: 2
+[05-Dec-2025 13:53:03 Europe/Berlin] Unsetting session variable: user_id
+[05-Dec-2025 13:53:03 Europe/Berlin] Unsetting session variable: fullname
+[05-Dec-2025 13:53:03 Europe/Berlin] Unsetting session variable: email
+[05-Dec-2025 13:53:03 Europe/Berlin] Unsetting session variable: role
+[05-Dec-2025 13:53:03 Europe/Berlin] Session array cleared
+[05-Dec-2025 13:53:03 Europe/Berlin] Session destroyed. Status: 1
+[05-Dec-2025 13:53:03 Europe/Berlin] Session cookie cleared
+[05-Dec-2025 13:53:03 Europe/Berlin] === LOGOUT COMPLETE ===
+[05-Dec-2025 14:00:35 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123"}
+[05-Dec-2025 14:00:35 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 14:00:35 Europe/Berlin] Login failed: Incorrect password - email=bry@gmail.com
+[05-Dec-2025 14:01:23 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[05-Dec-2025 14:01:23 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 14:01:23 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[05-Dec-2025 14:06:53 Europe/Berlin] === LOGOUT INITIATED ===
+[05-Dec-2025 14:06:53 Europe/Berlin] Session ID: lt266c0kljp1t295qafh39hqf8
+[05-Dec-2025 14:06:53 Europe/Berlin] Session status before destroy: 2
+[05-Dec-2025 14:06:53 Europe/Berlin] Unsetting session variable: user_id
+[05-Dec-2025 14:06:53 Europe/Berlin] Unsetting session variable: fullname
+[05-Dec-2025 14:06:53 Europe/Berlin] Unsetting session variable: email
+[05-Dec-2025 14:06:53 Europe/Berlin] Unsetting session variable: role
+[05-Dec-2025 14:06:53 Europe/Berlin] Session array cleared
+[05-Dec-2025 14:06:53 Europe/Berlin] Session destroyed. Status: 1
+[05-Dec-2025 14:06:53 Europe/Berlin] Session cookie cleared
+[05-Dec-2025 14:06:53 Europe/Berlin] === LOGOUT COMPLETE ===
+[05-Dec-2025 14:07:01 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123"}
+[05-Dec-2025 14:07:01 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 14:07:01 Europe/Berlin] Login failed: Incorrect password - email=bry@gmail.com
+[05-Dec-2025 14:27:28 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123"}
+[05-Dec-2025 14:27:28 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 14:27:28 Europe/Berlin] Login failed: Incorrect password - email=bry@gmail.com
+[05-Dec-2025 14:41:06 Europe/Berlin] Login request: {
+    "password":  "123123",
+    "email":  "bry@gmail.com"
+}
+[05-Dec-2025 14:41:06 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 14:41:06 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[05-Dec-2025 15:10:57 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[05-Dec-2025 15:10:57 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 15:10:57 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[05-Dec-2025 15:12:42 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[05-Dec-2025 15:12:42 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 15:12:42 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[05-Dec-2025 15:18:34 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[05-Dec-2025 15:18:34 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[05-Dec-2025 15:18:34 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[05-Dec-2025 15:20:19 Europe/Berlin] === LOGOUT INITIATED ===
+[05-Dec-2025 15:20:19 Europe/Berlin] Session ID: bt5gsg1n93v1per4vq1dt03i0j
+[05-Dec-2025 15:20:19 Europe/Berlin] Session status before destroy: 2
+[05-Dec-2025 15:20:19 Europe/Berlin] Unsetting session variable: user_id
+[05-Dec-2025 15:20:19 Europe/Berlin] Unsetting session variable: fullname
+[05-Dec-2025 15:20:19 Europe/Berlin] Unsetting session variable: email
+[05-Dec-2025 15:20:19 Europe/Berlin] Unsetting session variable: role
+[05-Dec-2025 15:20:19 Europe/Berlin] Session array cleared
+[05-Dec-2025 15:20:19 Europe/Berlin] Session destroyed. Status: 1
+[05-Dec-2025 15:20:19 Europe/Berlin] Session cookie cleared
+[05-Dec-2025 15:20:19 Europe/Berlin] === LOGOUT COMPLETE ===
+[05-Dec-2025 15:20:47 Europe/Berlin] Login request: {"email":"jose@frostbyte.com","password":"123123"}
+[05-Dec-2025 15:20:47 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'jose@frostbyte.com'
+[05-Dec-2025 15:20:47 Europe/Berlin] Login failed: Incorrect password - email=jose@frostbyte.com
+[05-Dec-2025 15:27:46 Europe/Berlin] Login request: {"email":"superadmin@frostbyte.com","password":"123123"}
+[05-Dec-2025 15:27:46 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'superadmin@frostbyte.com'
+[05-Dec-2025 15:27:46 Europe/Berlin] User logged in successfully: user_id=USR-53f0bc48c4f5, role=superadmin
+[05-Dec-2025 15:27:58 Europe/Berlin] === LOGOUT INITIATED ===
+[05-Dec-2025 15:27:58 Europe/Berlin] Session ID: 55gn362vghm2ejp1psc7vdh2r7
+[05-Dec-2025 15:27:58 Europe/Berlin] Session status before destroy: 2
+[05-Dec-2025 15:27:58 Europe/Berlin] Unsetting session variable: user_id
+[05-Dec-2025 15:27:58 Europe/Berlin] Unsetting session variable: fullname
+[05-Dec-2025 15:27:58 Europe/Berlin] Unsetting session variable: email
+[05-Dec-2025 15:27:58 Europe/Berlin] Unsetting session variable: role
+[05-Dec-2025 15:27:58 Europe/Berlin] Session array cleared
+[05-Dec-2025 15:27:58 Europe/Berlin] Session destroyed. Status: 1
+[05-Dec-2025 15:27:58 Europe/Berlin] Session cookie cleared
+[05-Dec-2025 15:27:58 Europe/Berlin] === LOGOUT COMPLETE ===
+[05-Dec-2025 15:31:13 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[05-Dec-2025 15:31:13 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[05-Dec-2025 15:31:13 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[05-Dec-2025 15:31:58 Europe/Berlin] === LOGOUT INITIATED ===
+[05-Dec-2025 15:31:58 Europe/Berlin] Session ID: oqncur8fgigbos9d66m4l9hn6i
+[05-Dec-2025 15:31:58 Europe/Berlin] Session status before destroy: 2
+[05-Dec-2025 15:31:58 Europe/Berlin] Unsetting session variable: user_id
+[05-Dec-2025 15:31:58 Europe/Berlin] Unsetting session variable: fullname
+[05-Dec-2025 15:31:58 Europe/Berlin] Unsetting session variable: email
+[05-Dec-2025 15:31:58 Europe/Berlin] Unsetting session variable: role
+[05-Dec-2025 15:31:58 Europe/Berlin] Session array cleared
+[05-Dec-2025 15:31:58 Europe/Berlin] Session destroyed. Status: 1
+[05-Dec-2025 15:31:58 Europe/Berlin] Session cookie cleared
+[05-Dec-2025 15:31:58 Europe/Berlin] === LOGOUT COMPLETE ===
+[07-Dec-2025 17:36:18 Europe/Berlin] === LOGOUT INITIATED ===
+[07-Dec-2025 17:36:18 Europe/Berlin] Session ID: d2rvnepgdhejvsvvthsmj1o9on
+[07-Dec-2025 17:36:18 Europe/Berlin] Session status before destroy: 2
+[07-Dec-2025 17:36:18 Europe/Berlin] Unsetting session variable: user_id
+[07-Dec-2025 17:36:18 Europe/Berlin] Unsetting session variable: fullname
+[07-Dec-2025 17:36:18 Europe/Berlin] Unsetting session variable: email
+[07-Dec-2025 17:36:18 Europe/Berlin] Unsetting session variable: role
+[07-Dec-2025 17:36:18 Europe/Berlin] Session array cleared
+[07-Dec-2025 17:36:18 Europe/Berlin] Session destroyed. Status: 1
+[07-Dec-2025 17:36:18 Europe/Berlin] Session cookie cleared
+[07-Dec-2025 17:36:18 Europe/Berlin] === LOGOUT COMPLETE ===
+[07-Dec-2025 17:36:25 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[07-Dec-2025 17:36:25 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[07-Dec-2025 17:36:25 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[07-Dec-2025 17:40:21 Europe/Berlin] === LOGOUT INITIATED ===
+[07-Dec-2025 17:40:21 Europe/Berlin] Session ID: r6s49e8vftphr51fc2kfdi2emt
+[07-Dec-2025 17:40:21 Europe/Berlin] Session status before destroy: 2
+[07-Dec-2025 17:40:21 Europe/Berlin] Unsetting session variable: user_id
+[07-Dec-2025 17:40:21 Europe/Berlin] Unsetting session variable: fullname
+[07-Dec-2025 17:40:21 Europe/Berlin] Unsetting session variable: email
+[07-Dec-2025 17:40:21 Europe/Berlin] Unsetting session variable: role
+[07-Dec-2025 17:40:21 Europe/Berlin] Session array cleared
+[07-Dec-2025 17:40:21 Europe/Berlin] Session destroyed. Status: 1
+[07-Dec-2025 17:40:21 Europe/Berlin] Session cookie cleared
+[07-Dec-2025 17:40:21 Europe/Berlin] === LOGOUT COMPLETE ===
+[07-Dec-2025 17:40:28 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[07-Dec-2025 17:40:28 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[07-Dec-2025 17:40:28 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[07-Dec-2025 18:33:29 Europe/Berlin] === LOGOUT INITIATED ===
+[07-Dec-2025 18:33:29 Europe/Berlin] Session ID: q1t25tag854ibhefk4fet3qjl5
+[07-Dec-2025 18:33:29 Europe/Berlin] Session status before destroy: 2
+[07-Dec-2025 18:33:29 Europe/Berlin] Unsetting session variable: user_id
+[07-Dec-2025 18:33:29 Europe/Berlin] Unsetting session variable: fullname
+[07-Dec-2025 18:33:29 Europe/Berlin] Unsetting session variable: email
+[07-Dec-2025 18:33:29 Europe/Berlin] Unsetting session variable: role
+[07-Dec-2025 18:33:29 Europe/Berlin] Session array cleared
+[07-Dec-2025 18:33:29 Europe/Berlin] Session destroyed. Status: 1
+[07-Dec-2025 18:33:29 Europe/Berlin] Session cookie cleared
+[07-Dec-2025 18:33:29 Europe/Berlin] === LOGOUT COMPLETE ===
+[07-Dec-2025 18:33:37 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[07-Dec-2025 18:33:37 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[07-Dec-2025 18:33:37 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[07-Dec-2025 18:34:34 Europe/Berlin] === LOGOUT INITIATED ===
+[07-Dec-2025 18:34:34 Europe/Berlin] Session ID: 7r6a28cce97c78p39q0qbo2rd0
+[07-Dec-2025 18:34:34 Europe/Berlin] Session status before destroy: 2
+[07-Dec-2025 18:34:34 Europe/Berlin] Unsetting session variable: user_id
+[07-Dec-2025 18:34:34 Europe/Berlin] Unsetting session variable: fullname
+[07-Dec-2025 18:34:34 Europe/Berlin] Unsetting session variable: email
+[07-Dec-2025 18:34:34 Europe/Berlin] Unsetting session variable: role
+[07-Dec-2025 18:34:34 Europe/Berlin] Session array cleared
+[07-Dec-2025 18:34:34 Europe/Berlin] Session destroyed. Status: 1
+[07-Dec-2025 18:34:34 Europe/Berlin] Session cookie cleared
+[07-Dec-2025 18:34:34 Europe/Berlin] === LOGOUT COMPLETE ===
+[07-Dec-2025 18:34:48 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[07-Dec-2025 18:34:48 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[07-Dec-2025 18:34:48 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[08-Dec-2025 01:03:11 Europe/Berlin] === LOGOUT INITIATED ===
+[08-Dec-2025 01:03:11 Europe/Berlin] Session ID: tfu0ftd5tri0dt4k48sml53ei7
+[08-Dec-2025 01:03:11 Europe/Berlin] Session status before destroy: 2
+[08-Dec-2025 01:03:11 Europe/Berlin] Unsetting session variable: user_id
+[08-Dec-2025 01:03:11 Europe/Berlin] Unsetting session variable: fullname
+[08-Dec-2025 01:03:11 Europe/Berlin] Unsetting session variable: email
+[08-Dec-2025 01:03:11 Europe/Berlin] Unsetting session variable: role
+[08-Dec-2025 01:03:11 Europe/Berlin] Session array cleared
+[08-Dec-2025 01:03:11 Europe/Berlin] Session destroyed. Status: 1
+[08-Dec-2025 01:03:11 Europe/Berlin] Session cookie cleared
+[08-Dec-2025 01:03:11 Europe/Berlin] === LOGOUT COMPLETE ===
+[08-Dec-2025 01:03:22 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[08-Dec-2025 01:03:22 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[08-Dec-2025 01:03:22 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[08-Dec-2025 01:47:43 Europe/Berlin] === LOGOUT INITIATED ===
+[08-Dec-2025 01:47:43 Europe/Berlin] Session ID: 900sraanvbic6b65m4o0qhjorp
+[08-Dec-2025 01:47:43 Europe/Berlin] Session status before destroy: 2
+[08-Dec-2025 01:47:43 Europe/Berlin] Unsetting session variable: user_id
+[08-Dec-2025 01:47:43 Europe/Berlin] Unsetting session variable: fullname
+[08-Dec-2025 01:47:43 Europe/Berlin] Unsetting session variable: email
+[08-Dec-2025 01:47:43 Europe/Berlin] Unsetting session variable: role
+[08-Dec-2025 01:47:43 Europe/Berlin] Session array cleared
+[08-Dec-2025 01:47:43 Europe/Berlin] Session destroyed. Status: 1
+[08-Dec-2025 01:47:43 Europe/Berlin] Session cookie cleared
+[08-Dec-2025 01:47:43 Europe/Berlin] === LOGOUT COMPLETE ===
+[08-Dec-2025 01:47:54 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[08-Dec-2025 01:47:54 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[08-Dec-2025 01:47:54 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[08-Dec-2025 01:53:35 Europe/Berlin] === LOGOUT INITIATED ===
+[08-Dec-2025 01:53:35 Europe/Berlin] Session ID: ftb8smnegk3es4f9tva41m4o8i
+[08-Dec-2025 01:53:35 Europe/Berlin] Session status before destroy: 2
+[08-Dec-2025 01:53:35 Europe/Berlin] Unsetting session variable: user_id
+[08-Dec-2025 01:53:35 Europe/Berlin] Unsetting session variable: fullname
+[08-Dec-2025 01:53:35 Europe/Berlin] Unsetting session variable: email
+[08-Dec-2025 01:53:35 Europe/Berlin] Unsetting session variable: role
+[08-Dec-2025 01:53:35 Europe/Berlin] Session array cleared
+[08-Dec-2025 01:53:35 Europe/Berlin] Session destroyed. Status: 1
+[08-Dec-2025 01:53:35 Europe/Berlin] Session cookie cleared
+[08-Dec-2025 01:53:35 Europe/Berlin] === LOGOUT COMPLETE ===
+[08-Dec-2025 01:53:50 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[08-Dec-2025 01:53:50 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[08-Dec-2025 01:53:50 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[08-Dec-2025 01:56:41 Europe/Berlin] === LOGOUT INITIATED ===
+[08-Dec-2025 01:56:41 Europe/Berlin] Session ID: 5p550b64dg3i21rldk3ja8aeru
+[08-Dec-2025 01:56:41 Europe/Berlin] Session status before destroy: 2
+[08-Dec-2025 01:56:41 Europe/Berlin] Unsetting session variable: user_id
+[08-Dec-2025 01:56:41 Europe/Berlin] Unsetting session variable: fullname
+[08-Dec-2025 01:56:41 Europe/Berlin] Unsetting session variable: email
+[08-Dec-2025 01:56:41 Europe/Berlin] Unsetting session variable: role
+[08-Dec-2025 01:56:41 Europe/Berlin] Session array cleared
+[08-Dec-2025 01:56:41 Europe/Berlin] Session destroyed. Status: 1
+[08-Dec-2025 01:56:41 Europe/Berlin] Session cookie cleared
+[08-Dec-2025 01:56:41 Europe/Berlin] === LOGOUT COMPLETE ===
+[08-Dec-2025 01:57:03 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[08-Dec-2025 01:57:03 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[08-Dec-2025 01:57:03 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[08-Dec-2025 02:25:29 Europe/Berlin] === LOGOUT INITIATED ===
+[08-Dec-2025 02:25:29 Europe/Berlin] Session ID: vm3j6c2g2pcikfvmudrd7fnb1h
+[08-Dec-2025 02:25:29 Europe/Berlin] Session status before destroy: 2
+[08-Dec-2025 02:25:29 Europe/Berlin] Unsetting session variable: user_id
+[08-Dec-2025 02:25:29 Europe/Berlin] Unsetting session variable: fullname
+[08-Dec-2025 02:25:29 Europe/Berlin] Unsetting session variable: email
+[08-Dec-2025 02:25:29 Europe/Berlin] Unsetting session variable: role
+[08-Dec-2025 02:25:29 Europe/Berlin] Session array cleared
+[08-Dec-2025 02:25:29 Europe/Berlin] Session destroyed. Status: 1
+[08-Dec-2025 02:25:29 Europe/Berlin] Session cookie cleared
+[08-Dec-2025 02:25:29 Europe/Berlin] === LOGOUT COMPLETE ===
+[08-Dec-2025 02:25:39 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[08-Dec-2025 02:25:39 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[08-Dec-2025 02:25:39 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[08-Dec-2025 02:26:01 Europe/Berlin] === LOGOUT INITIATED ===
+[08-Dec-2025 02:26:01 Europe/Berlin] Session ID: tl5g65n3mot5jid3ld2gm04607
+[08-Dec-2025 02:26:01 Europe/Berlin] Session status before destroy: 2
+[08-Dec-2025 02:26:01 Europe/Berlin] Unsetting session variable: user_id
+[08-Dec-2025 02:26:01 Europe/Berlin] Unsetting session variable: fullname
+[08-Dec-2025 02:26:01 Europe/Berlin] Unsetting session variable: email
+[08-Dec-2025 02:26:01 Europe/Berlin] Unsetting session variable: role
+[08-Dec-2025 02:26:01 Europe/Berlin] Session array cleared
+[08-Dec-2025 02:26:01 Europe/Berlin] Session destroyed. Status: 1
+[08-Dec-2025 02:26:01 Europe/Berlin] Session cookie cleared
+[08-Dec-2025 02:26:01 Europe/Berlin] === LOGOUT COMPLETE ===
+[08-Dec-2025 02:26:09 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[08-Dec-2025 02:26:09 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[08-Dec-2025 02:26:09 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[08-Dec-2025 02:28:25 Europe/Berlin] === LOGOUT INITIATED ===
+[08-Dec-2025 02:28:25 Europe/Berlin] Session ID: 09efnj0clqhs8sr9c39dllo5mt
+[08-Dec-2025 02:28:25 Europe/Berlin] Session status before destroy: 2
+[08-Dec-2025 02:28:25 Europe/Berlin] Unsetting session variable: user_id
+[08-Dec-2025 02:28:25 Europe/Berlin] Unsetting session variable: fullname
+[08-Dec-2025 02:28:25 Europe/Berlin] Unsetting session variable: email
+[08-Dec-2025 02:28:25 Europe/Berlin] Unsetting session variable: role
+[08-Dec-2025 02:28:25 Europe/Berlin] Session array cleared
+[08-Dec-2025 02:28:25 Europe/Berlin] Session destroyed. Status: 1
+[08-Dec-2025 02:28:25 Europe/Berlin] Session cookie cleared
+[08-Dec-2025 02:28:25 Europe/Berlin] === LOGOUT COMPLETE ===
+[08-Dec-2025 02:28:58 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[08-Dec-2025 02:28:58 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[08-Dec-2025 02:28:58 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[08-Dec-2025 02:29:56 Europe/Berlin] === LOGOUT INITIATED ===
+[08-Dec-2025 02:29:56 Europe/Berlin] Session ID: bra995frrbmvdunfpgtpo1oteb
+[08-Dec-2025 02:29:56 Europe/Berlin] Session status before destroy: 2
+[08-Dec-2025 02:29:56 Europe/Berlin] Unsetting session variable: user_id
+[08-Dec-2025 02:29:56 Europe/Berlin] Unsetting session variable: fullname
+[08-Dec-2025 02:29:56 Europe/Berlin] Unsetting session variable: email
+[08-Dec-2025 02:29:56 Europe/Berlin] Unsetting session variable: role
+[08-Dec-2025 02:29:56 Europe/Berlin] Session array cleared
+[08-Dec-2025 02:29:56 Europe/Berlin] Session destroyed. Status: 1
+[08-Dec-2025 02:29:56 Europe/Berlin] Session cookie cleared
+[08-Dec-2025 02:29:56 Europe/Berlin] === LOGOUT COMPLETE ===
+[08-Dec-2025 02:30:01 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[08-Dec-2025 02:30:01 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[08-Dec-2025 02:30:01 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[08-Dec-2025 02:49:54 Europe/Berlin] === LOGOUT INITIATED ===
+[08-Dec-2025 02:49:54 Europe/Berlin] Session ID: 22076d974gr23innnq3rnvomua
+[08-Dec-2025 02:49:54 Europe/Berlin] Session status before destroy: 2
+[08-Dec-2025 02:49:54 Europe/Berlin] Unsetting session variable: user_id
+[08-Dec-2025 02:49:54 Europe/Berlin] Unsetting session variable: fullname
+[08-Dec-2025 02:49:54 Europe/Berlin] Unsetting session variable: email
+[08-Dec-2025 02:49:54 Europe/Berlin] Unsetting session variable: role
+[08-Dec-2025 02:49:54 Europe/Berlin] Session array cleared
+[08-Dec-2025 02:49:54 Europe/Berlin] Session destroyed. Status: 1
+[08-Dec-2025 02:49:54 Europe/Berlin] Session cookie cleared
+[08-Dec-2025 02:49:54 Europe/Berlin] === LOGOUT COMPLETE ===
+[08-Dec-2025 02:50:03 Europe/Berlin] Login request: {"email":"superadmin@frostbyte.com","password":"123123"}
+[08-Dec-2025 02:50:03 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'superadmin@frostbyte.com'
+[08-Dec-2025 02:50:03 Europe/Berlin] User logged in successfully: user_id=USR-53f0bc48c4f5, role=superadmin
+[08-Dec-2025 02:54:43 Europe/Berlin] === LOGOUT INITIATED ===
+[08-Dec-2025 02:54:43 Europe/Berlin] Session ID: 9pdbm7a4bv2q4rha44ghluopr7
+[08-Dec-2025 02:54:43 Europe/Berlin] Session status before destroy: 2
+[08-Dec-2025 02:54:43 Europe/Berlin] Unsetting session variable: user_id
+[08-Dec-2025 02:54:43 Europe/Berlin] Unsetting session variable: fullname
+[08-Dec-2025 02:54:43 Europe/Berlin] Unsetting session variable: email
+[08-Dec-2025 02:54:43 Europe/Berlin] Unsetting session variable: role
+[08-Dec-2025 02:54:43 Europe/Berlin] Session array cleared
+[08-Dec-2025 02:54:43 Europe/Berlin] Session destroyed. Status: 1
+[08-Dec-2025 02:54:43 Europe/Berlin] Session cookie cleared
+[08-Dec-2025 02:54:43 Europe/Berlin] === LOGOUT COMPLETE ===
+[08-Dec-2025 02:54:56 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[08-Dec-2025 02:54:56 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[08-Dec-2025 02:54:56 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[08-Dec-2025 08:02:28 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[08-Dec-2025 08:02:28 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[08-Dec-2025 08:02:28 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[08-Dec-2025 08:15:15 Europe/Berlin] === LOGOUT INITIATED ===
+[08-Dec-2025 08:15:15 Europe/Berlin] Session ID: qgqpc58h14f7espjjhmnss42lg
+[08-Dec-2025 08:15:15 Europe/Berlin] Session status before destroy: 2
+[08-Dec-2025 08:15:15 Europe/Berlin] Unsetting session variable: user_id
+[08-Dec-2025 08:15:15 Europe/Berlin] Unsetting session variable: fullname
+[08-Dec-2025 08:15:15 Europe/Berlin] Unsetting session variable: email
+[08-Dec-2025 08:15:15 Europe/Berlin] Unsetting session variable: role
+[08-Dec-2025 08:15:15 Europe/Berlin] Session array cleared
+[08-Dec-2025 08:15:15 Europe/Berlin] Session destroyed. Status: 1
+[08-Dec-2025 08:15:15 Europe/Berlin] Session cookie cleared
+[08-Dec-2025 08:15:15 Europe/Berlin] === LOGOUT COMPLETE ===
+[08-Dec-2025 08:15:41 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[08-Dec-2025 08:15:41 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[08-Dec-2025 08:15:41 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[08-Dec-2025 12:53:19 Europe/Berlin] === LOGOUT INITIATED ===
+[08-Dec-2025 12:53:19 Europe/Berlin] Session ID: blosbt9p2it5rkqc90tk81ciku
+[08-Dec-2025 12:53:19 Europe/Berlin] Session status before destroy: 2
+[08-Dec-2025 12:53:19 Europe/Berlin] Unsetting session variable: user_id
+[08-Dec-2025 12:53:19 Europe/Berlin] Unsetting session variable: fullname
+[08-Dec-2025 12:53:19 Europe/Berlin] Unsetting session variable: email
+[08-Dec-2025 12:53:19 Europe/Berlin] Unsetting session variable: role
+[08-Dec-2025 12:53:19 Europe/Berlin] Session array cleared
+[08-Dec-2025 12:53:19 Europe/Berlin] Session destroyed. Status: 1
+[08-Dec-2025 12:53:19 Europe/Berlin] Session cookie cleared
+[08-Dec-2025 12:53:19 Europe/Berlin] === LOGOUT COMPLETE ===
+[08-Dec-2025 12:53:27 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[08-Dec-2025 12:53:27 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[08-Dec-2025 12:53:28 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[08-Dec-2025 12:55:33 Europe/Berlin] === LOGOUT INITIATED ===
+[08-Dec-2025 12:55:33 Europe/Berlin] Session ID: b7pirmlfk8460mv4mj2tcaclmq
+[08-Dec-2025 12:55:33 Europe/Berlin] Session status before destroy: 2
+[08-Dec-2025 12:55:33 Europe/Berlin] Unsetting session variable: user_id
+[08-Dec-2025 12:55:33 Europe/Berlin] Unsetting session variable: fullname
+[08-Dec-2025 12:55:33 Europe/Berlin] Unsetting session variable: email
+[08-Dec-2025 12:55:33 Europe/Berlin] Unsetting session variable: role
+[08-Dec-2025 12:55:33 Europe/Berlin] Session array cleared
+[08-Dec-2025 12:55:33 Europe/Berlin] Session destroyed. Status: 1
+[08-Dec-2025 12:55:33 Europe/Berlin] Session cookie cleared
+[08-Dec-2025 12:55:33 Europe/Berlin] === LOGOUT COMPLETE ===
+[08-Dec-2025 12:55:43 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[08-Dec-2025 12:55:43 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[08-Dec-2025 12:55:43 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[08-Dec-2025 16:20:10 Europe/Berlin] === LOGOUT INITIATED ===
+[08-Dec-2025 16:20:10 Europe/Berlin] Session ID: bq9jan5gni9b1l46a2r1trhbkf
+[08-Dec-2025 16:20:10 Europe/Berlin] Session status before destroy: 2
+[08-Dec-2025 16:20:10 Europe/Berlin] Unsetting session variable: user_id
+[08-Dec-2025 16:20:10 Europe/Berlin] Unsetting session variable: fullname
+[08-Dec-2025 16:20:10 Europe/Berlin] Unsetting session variable: email
+[08-Dec-2025 16:20:10 Europe/Berlin] Unsetting session variable: role
+[08-Dec-2025 16:20:10 Europe/Berlin] Session array cleared
+[08-Dec-2025 16:20:10 Europe/Berlin] Session destroyed. Status: 1
+[08-Dec-2025 16:20:10 Europe/Berlin] Session cookie cleared
+[08-Dec-2025 16:20:10 Europe/Berlin] === LOGOUT COMPLETE ===
+[08-Dec-2025 16:20:25 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[08-Dec-2025 16:20:25 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[08-Dec-2025 16:20:25 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[08-Dec-2025 16:28:49 Europe/Berlin] === LOGOUT INITIATED ===
+[08-Dec-2025 16:28:49 Europe/Berlin] Session ID: i8a9nl4ko5a21fqosmi1i03i3f
+[08-Dec-2025 16:28:49 Europe/Berlin] Session status before destroy: 2
+[08-Dec-2025 16:28:49 Europe/Berlin] Unsetting session variable: user_id
+[08-Dec-2025 16:28:49 Europe/Berlin] Unsetting session variable: fullname
+[08-Dec-2025 16:28:49 Europe/Berlin] Unsetting session variable: email
+[08-Dec-2025 16:28:49 Europe/Berlin] Unsetting session variable: role
+[08-Dec-2025 16:28:49 Europe/Berlin] Session array cleared
+[08-Dec-2025 16:28:49 Europe/Berlin] Session destroyed. Status: 1
+[08-Dec-2025 16:28:49 Europe/Berlin] Session cookie cleared
+[08-Dec-2025 16:28:49 Europe/Berlin] === LOGOUT COMPLETE ===
+[08-Dec-2025 16:29:00 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[08-Dec-2025 16:29:00 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[08-Dec-2025 16:29:00 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[08-Dec-2025 16:29:41 Europe/Berlin] === LOGOUT INITIATED ===
+[08-Dec-2025 16:29:41 Europe/Berlin] Session ID: 5hhcgajg25qg3gl9rakcvqlud0
+[08-Dec-2025 16:29:41 Europe/Berlin] Session status before destroy: 2
+[08-Dec-2025 16:29:41 Europe/Berlin] Unsetting session variable: user_id
+[08-Dec-2025 16:29:41 Europe/Berlin] Unsetting session variable: fullname
+[08-Dec-2025 16:29:41 Europe/Berlin] Unsetting session variable: email
+[08-Dec-2025 16:29:41 Europe/Berlin] Unsetting session variable: role
+[08-Dec-2025 16:29:41 Europe/Berlin] Session array cleared
+[08-Dec-2025 16:29:41 Europe/Berlin] Session destroyed. Status: 1
+[08-Dec-2025 16:29:41 Europe/Berlin] Session cookie cleared
+[08-Dec-2025 16:29:41 Europe/Berlin] === LOGOUT COMPLETE ===
+[08-Dec-2025 16:40:06 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[08-Dec-2025 16:40:06 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[08-Dec-2025 16:40:06 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[08-Dec-2025 17:24:17 Europe/Berlin] === LOGOUT INITIATED ===
+[08-Dec-2025 17:24:17 Europe/Berlin] Session ID: 0q3hfvh0nf6dl9scer2i6gunea
+[08-Dec-2025 17:24:17 Europe/Berlin] Session status before destroy: 2
+[08-Dec-2025 17:24:17 Europe/Berlin] Unsetting session variable: user_id
+[08-Dec-2025 17:24:17 Europe/Berlin] Unsetting session variable: fullname
+[08-Dec-2025 17:24:17 Europe/Berlin] Unsetting session variable: email
+[08-Dec-2025 17:24:17 Europe/Berlin] Unsetting session variable: role
+[08-Dec-2025 17:24:17 Europe/Berlin] Session array cleared
+[08-Dec-2025 17:24:17 Europe/Berlin] Session destroyed. Status: 1
+[08-Dec-2025 17:24:17 Europe/Berlin] Session cookie cleared
+[08-Dec-2025 17:24:17 Europe/Berlin] === LOGOUT COMPLETE ===
+[08-Dec-2025 17:24:26 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[08-Dec-2025 17:24:26 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[08-Dec-2025 17:24:26 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[09-Dec-2025 00:00:52 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[09-Dec-2025 00:00:52 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[09-Dec-2025 00:00:52 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[09-Dec-2025 00:31:03 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 00:31:03 Europe/Berlin] Session ID: fd4o06joqkmq6ab8ki8jkdipph
+[09-Dec-2025 00:31:03 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 00:31:03 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 00:31:03 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 00:31:03 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 00:31:03 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 00:31:03 Europe/Berlin] Session array cleared
+[09-Dec-2025 00:31:03 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 00:31:03 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 00:31:03 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 02:29:18 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[09-Dec-2025 02:29:18 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[09-Dec-2025 02:29:18 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[09-Dec-2025 03:20:26 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 03:20:26 Europe/Berlin] Session ID: 4tthqp4541mtcgu1agae4u1q18
+[09-Dec-2025 03:20:26 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 03:20:26 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 03:20:26 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 03:20:26 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 03:20:26 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 03:20:26 Europe/Berlin] Session array cleared
+[09-Dec-2025 03:20:26 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 03:20:26 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 03:20:26 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 03:20:34 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[09-Dec-2025 03:20:34 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[09-Dec-2025 03:20:34 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[09-Dec-2025 04:12:36 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 04:12:36 Europe/Berlin] Session ID: c6rls9uibmtrbe0vk7imghvno2
+[09-Dec-2025 04:12:36 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 04:12:36 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 04:12:36 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 04:12:36 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 04:12:36 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 04:12:36 Europe/Berlin] Session array cleared
+[09-Dec-2025 04:12:36 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 04:12:36 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 04:12:36 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 04:13:38 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[09-Dec-2025 04:13:38 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[09-Dec-2025 04:13:38 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[09-Dec-2025 04:22:31 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 04:22:31 Europe/Berlin] Session ID: 4ubldfckd7kri0k06il9qmnfa6
+[09-Dec-2025 04:22:31 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 04:22:31 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 04:22:31 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 04:22:31 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 04:22:31 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 04:22:31 Europe/Berlin] Session array cleared
+[09-Dec-2025 04:22:31 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 04:22:31 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 04:22:31 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 04:23:06 Europe/Berlin] Login request: {"email":"gert@gmail.com","password":"123123"}
+[09-Dec-2025 04:23:06 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'gert@gmail.com'
+[09-Dec-2025 04:23:06 Europe/Berlin] User logged in successfully: user_id=USR-6933e0d9e252b, role=user
+[09-Dec-2025 04:24:25 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 04:24:25 Europe/Berlin] Session ID: 1rnafoc36k2q64j0223ivoddok
+[09-Dec-2025 04:24:25 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 04:24:25 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 04:24:25 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 04:24:25 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 04:24:25 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 04:24:25 Europe/Berlin] Session array cleared
+[09-Dec-2025 04:24:25 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 04:24:25 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 04:24:25 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 04:24:32 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[09-Dec-2025 04:24:32 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[09-Dec-2025 04:24:32 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[09-Dec-2025 04:49:13 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 04:49:13 Europe/Berlin] Session ID: dd8l9ope5jldimsmmio3j1m6as
+[09-Dec-2025 04:49:13 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 04:49:13 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 04:49:13 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 04:49:13 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 04:49:13 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 04:49:13 Europe/Berlin] Session array cleared
+[09-Dec-2025 04:49:13 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 04:49:13 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 04:49:13 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 04:50:22 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[09-Dec-2025 04:50:22 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[09-Dec-2025 04:50:22 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[09-Dec-2025 04:51:33 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 04:51:33 Europe/Berlin] Session ID: kpimaktt1ccdi07cj9jb1kueeg
+[09-Dec-2025 04:51:33 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 04:51:33 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 04:51:33 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 04:51:33 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 04:51:33 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 04:51:33 Europe/Berlin] Session array cleared
+[09-Dec-2025 04:51:33 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 04:51:33 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 04:51:33 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 04:51:49 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"1213123"}
+[09-Dec-2025 04:51:49 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[09-Dec-2025 04:51:49 Europe/Berlin] Login failed: Incorrect password - email=admin@frostbyte.com
+[09-Dec-2025 04:51:53 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[09-Dec-2025 04:51:53 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[09-Dec-2025 04:51:53 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[09-Dec-2025 04:52:14 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 04:52:14 Europe/Berlin] Session ID: 1hv5ogt5ip0049abpmtqptkg52
+[09-Dec-2025 04:52:14 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 04:52:14 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 04:52:14 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 04:52:14 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 04:52:14 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 04:52:14 Europe/Berlin] Session array cleared
+[09-Dec-2025 04:52:14 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 04:52:14 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 04:52:14 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 04:52:20 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[09-Dec-2025 04:52:20 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[09-Dec-2025 04:52:20 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[09-Dec-2025 04:53:06 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 04:53:06 Europe/Berlin] Session ID: deg62d0b4plh2hl31lnmp67ts6
+[09-Dec-2025 04:53:06 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 04:53:06 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 04:53:06 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 04:53:06 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 04:53:06 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 04:53:06 Europe/Berlin] Session array cleared
+[09-Dec-2025 04:53:06 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 04:53:06 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 04:53:06 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 04:53:53 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[09-Dec-2025 04:53:53 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[09-Dec-2025 04:53:53 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[09-Dec-2025 04:54:52 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 04:54:52 Europe/Berlin] Session ID: 80lmh0m8icjdqm2dkctke6fjlr
+[09-Dec-2025 04:54:52 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 04:54:52 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 04:54:52 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 04:54:52 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 04:54:52 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 04:54:52 Europe/Berlin] Session array cleared
+[09-Dec-2025 04:54:52 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 04:54:52 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 04:54:52 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 04:55:00 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[09-Dec-2025 04:55:00 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[09-Dec-2025 04:55:00 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[09-Dec-2025 05:53:36 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[09-Dec-2025 05:53:36 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[09-Dec-2025 05:53:36 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[09-Dec-2025 06:23:17 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 06:23:17 Europe/Berlin] Session ID: 0p307hnq43v9sfnp61u0c80lkr
+[09-Dec-2025 06:23:17 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 06:23:17 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 06:23:17 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 06:23:17 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 06:23:17 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 06:23:17 Europe/Berlin] Session array cleared
+[09-Dec-2025 06:23:17 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 06:23:17 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 06:23:17 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 06:23:53 Europe/Berlin] Signup request: {"fullname":"Alvin Mahilig","email":"alvin@gmail.com","password":"123123","confirm_password":"123123","gender":"Male","city":"Kabankalan"}
+[09-Dec-2025 06:23:53 Europe/Berlin] Insert query: INSERT INTO users 
+(user_id, fullname, email, password, gender, city, role, status, orders, total_spent, join_date, created_at, updated_at) 
+VALUES 
+('USR-6937b26996652', 'Alvin Mahilig', 'alvin@gmail.com', '96cae35ce8a9b0244178bf28e4966c2ce1b8385723a96a6b838858cdd6ca0a1e', 'Male', 'Kabankalan', 'user', 'active', 0, 0.00, '2025-12-09 06:23:53', '2025-12-09 06:23:53', '2025-12-09 06:23:53')
+[09-Dec-2025 06:23:53 Europe/Berlin] User registered successfully: user_id=USR-6937b26996652, email=alvin@gmail.com
+[09-Dec-2025 06:24:07 Europe/Berlin] Login request: {"email":"alvin@gmail.com","password":"123123"}
+[09-Dec-2025 06:24:07 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'alvin@gmail.com'
+[09-Dec-2025 06:24:07 Europe/Berlin] User logged in successfully: user_id=USR-6937b26996652, role=user
+[09-Dec-2025 06:26:21 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 06:26:21 Europe/Berlin] Session ID: htl26jm98qcimn73u9qm1m7vtf
+[09-Dec-2025 06:26:21 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 06:26:21 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 06:26:21 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 06:26:21 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 06:26:21 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 06:26:21 Europe/Berlin] Session array cleared
+[09-Dec-2025 06:26:21 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 06:26:21 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 06:26:21 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 06:26:27 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[09-Dec-2025 06:26:27 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[09-Dec-2025 06:26:27 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[09-Dec-2025 06:29:11 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 06:29:11 Europe/Berlin] Session ID: 1eakvdlmaqvf4t0glevsso8269
+[09-Dec-2025 06:29:11 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 06:29:11 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 06:29:11 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 06:29:11 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 06:29:11 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 06:29:11 Europe/Berlin] Session array cleared
+[09-Dec-2025 06:29:11 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 06:29:11 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 06:29:11 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 06:29:21 Europe/Berlin] Login request: {"email":"superadmin@frostbyte.com","password":"123123"}
+[09-Dec-2025 06:29:21 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'superadmin@frostbyte.com'
+[09-Dec-2025 06:29:21 Europe/Berlin] User logged in successfully: user_id=USR-53f0bc48c4f5, role=superadmin
+[09-Dec-2025 06:31:07 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 06:31:07 Europe/Berlin] Session ID: 01lp310de2kh6fviui46csu1i0
+[09-Dec-2025 06:31:07 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 06:31:07 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 06:31:07 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 06:31:07 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 06:31:07 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 06:31:07 Europe/Berlin] Session array cleared
+[09-Dec-2025 06:31:07 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 06:31:07 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 06:31:07 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 06:41:55 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[09-Dec-2025 06:41:55 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[09-Dec-2025 06:41:55 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[09-Dec-2025 06:43:07 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 06:43:07 Europe/Berlin] Session ID: fjmairdnuqpbknvpt1p573g54j
+[09-Dec-2025 06:43:07 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 06:43:07 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 06:43:07 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 06:43:07 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 06:43:07 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 06:43:07 Europe/Berlin] Session array cleared
+[09-Dec-2025 06:43:07 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 06:43:07 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 06:43:07 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 06:43:14 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[09-Dec-2025 06:43:14 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[09-Dec-2025 06:43:14 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[09-Dec-2025 06:55:11 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 06:55:11 Europe/Berlin] Session ID: objrsrsioifv5uclroehg47luo
+[09-Dec-2025 06:55:11 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 06:55:11 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 06:55:11 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 06:55:11 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 06:55:11 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 06:55:11 Europe/Berlin] Session array cleared
+[09-Dec-2025 06:55:11 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 06:55:11 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 06:55:11 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 06:55:22 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[09-Dec-2025 06:55:22 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[09-Dec-2025 06:55:22 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[09-Dec-2025 07:00:57 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[09-Dec-2025 07:00:57 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[09-Dec-2025 07:00:57 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[09-Dec-2025 07:25:06 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 07:25:06 Europe/Berlin] Session ID: 6vrre6grpebjutokal9h85q9kf
+[09-Dec-2025 07:25:06 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 07:25:06 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 07:25:06 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 07:25:06 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 07:25:06 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 07:25:06 Europe/Berlin] Session array cleared
+[09-Dec-2025 07:25:06 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 07:25:06 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 07:25:06 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 07:26:34 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[09-Dec-2025 07:26:34 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[09-Dec-2025 07:26:34 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[09-Dec-2025 07:39:29 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 07:39:29 Europe/Berlin] Session ID: 45n66g51ks25sso416tf0o9tge
+[09-Dec-2025 07:39:29 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 07:39:29 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 07:39:29 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 07:39:29 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 07:39:29 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 07:39:29 Europe/Berlin] Session array cleared
+[09-Dec-2025 07:39:29 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 07:39:29 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 07:39:29 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 07:39:37 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[09-Dec-2025 07:39:37 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[09-Dec-2025 07:39:37 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[09-Dec-2025 08:10:33 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 08:10:33 Europe/Berlin] Session ID: na2kebgvr8pkr70ih6n35q6arm
+[09-Dec-2025 08:10:33 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 08:10:33 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 08:10:33 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 08:10:33 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 08:10:33 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 08:10:33 Europe/Berlin] Session array cleared
+[09-Dec-2025 08:10:33 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 08:10:33 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 08:10:33 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 08:10:42 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[09-Dec-2025 08:10:42 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[09-Dec-2025 08:10:42 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[09-Dec-2025 08:30:43 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 08:30:43 Europe/Berlin] Session ID: e5av46t13qs73c26bkc8gsa3so
+[09-Dec-2025 08:30:43 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 08:30:43 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 08:30:43 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 08:30:43 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 08:30:43 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 08:30:43 Europe/Berlin] Session array cleared
+[09-Dec-2025 08:30:43 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 08:30:43 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 08:30:43 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 08:30:52 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[09-Dec-2025 08:30:52 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[09-Dec-2025 08:30:52 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[09-Dec-2025 09:13:25 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[09-Dec-2025 09:13:25 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[09-Dec-2025 09:13:25 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
+[09-Dec-2025 09:39:57 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 09:39:57 Europe/Berlin] Session ID: rm4m6560dij3ijiqcfjlc1c30d
+[09-Dec-2025 09:39:57 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 09:39:57 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 09:39:57 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 09:39:57 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 09:39:57 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 09:39:57 Europe/Berlin] Session array cleared
+[09-Dec-2025 09:39:57 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 09:39:57 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 09:39:57 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 09:40:09 Europe/Berlin] Login request: {"email":"admin@frostbyte.com","password":"123123"}
+[09-Dec-2025 09:40:09 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'admin@frostbyte.com'
+[09-Dec-2025 09:40:09 Europe/Berlin] User logged in successfully: user_id=USR-12472e7cf440, role=admin
+[09-Dec-2025 09:41:28 Europe/Berlin] === LOGOUT INITIATED ===
+[09-Dec-2025 09:41:28 Europe/Berlin] Session ID: nreqcqqueoe2crf4n20u6lsjb5
+[09-Dec-2025 09:41:28 Europe/Berlin] Session status before destroy: 2
+[09-Dec-2025 09:41:28 Europe/Berlin] Unsetting session variable: user_id
+[09-Dec-2025 09:41:28 Europe/Berlin] Unsetting session variable: fullname
+[09-Dec-2025 09:41:28 Europe/Berlin] Unsetting session variable: email
+[09-Dec-2025 09:41:28 Europe/Berlin] Unsetting session variable: role
+[09-Dec-2025 09:41:28 Europe/Berlin] Session array cleared
+[09-Dec-2025 09:41:28 Europe/Berlin] Session destroyed. Status: 1
+[09-Dec-2025 09:41:28 Europe/Berlin] Session cookie cleared
+[09-Dec-2025 09:41:28 Europe/Berlin] === LOGOUT COMPLETE ===
+[09-Dec-2025 09:41:40 Europe/Berlin] Login request: {"email":"superadmin@frostbyte.com","password":"123123"}
+[09-Dec-2025 09:41:40 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'superadmin@frostbyte.com'
+[09-Dec-2025 09:41:40 Europe/Berlin] User logged in successfully: user_id=USR-53f0bc48c4f5, role=superadmin
+[09-Dec-2025 10:16:06 Europe/Berlin] Login request: {"email":"bry@gmail.com","password":"123123"}
+[09-Dec-2025 10:16:06 Europe/Berlin] Login query: SELECT user_id, fullname, email, password, role, status FROM users WHERE email = 'bry@gmail.com'
+[09-Dec-2025 10:16:06 Europe/Berlin] User logged in successfully: user_id=USR-6932b7e5bfc26, role=user
